@@ -1,0 +1,410 @@
+/* ------------------------------------------------------------ *\
+  Tabs contacts
+\* ------------------------------------------------------------ */
+
+.tabs {
+  background: linear-gradient(to bottom, rgba(35,31,32,0.15) 0%,rgba(255,255,255,1) 100%);
+  border-radius: 16px;
+  box-shadow: 2px 2px 6px 0 rgba(0,0,0,0.3);
+  border: 1px solid  #9495c3;
+  padding: 36px 27px 8px 24px;
+
+  @include breakpoint-down(tablet) {
+    padding: 20px;
+  }
+
+  @include breakpoint-down(mobile) {
+    padding: 0;
+    box-shadow: none;
+    border: 0;
+    border-radius: 0;
+    background: none;
+  }
+
+  .tabs__head {
+    margin-bottom: 24px;
+
+    @include breakpoint-down(mobile) {
+      background: #e4e4e4;
+      padding: 0 10px 8px 19px;
+      margin-bottom: 0;
+    }
+  }
+
+  .tabs__nav {
+    font-weight: 700;
+    font-style: italic;
+    font-size: 16px;
+    margin-bottom: 0;
+
+    @include breakpoint-down(mobile) {
+      text-align: left;
+      margin-bottom: 0;
+      font-size: 19px;
+    }
+
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+
+      @include breakpoint-down(mobile) {
+        justify-content: center;
+        padding-left: 8px;
+      }
+    }
+
+    li {
+      margin-right: 10px;
+      position: relative;
+      color: #939292;
+      padding-bottom: 5px;
+      transition: color $t-duration;
+
+      @include breakpoint-down(mobile) {
+        padding-right: 16px;
+        margin-right: 12px;
+        color: #808285;
+      }
+
+      &:before {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        background: $c-black;
+        width: 2px;
+        height: 60%;
+        display: none;
+
+        @include breakpoint-down(mobile) {
+          display: block;
+        }
+      }
+
+      &:after {
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: #EFEDEE;
+        transition: background $t-duration;
+
+        @include breakpoint-down(mobile) {
+          background: transparent;
+          display: none;
+        }
+      }
+
+      &:last-child {
+        flex: 1;
+        margin-right: 0;
+
+        @include breakpoint-down(mobile) {
+          flex: 0 0 auto;
+          padding-right: 0;
+        }
+
+        &:before {
+          display: none;
+        }
+      }
+
+      &.is-current {
+        color: $c-black;
+
+        &:after {
+          background: #969394;
+        }
+
+        a {
+          &:after {
+            @include breakpoint-down(mobile) {
+              opacity: 1;
+              visibility: visible;
+            }
+          }
+        }
+      }
+    }
+
+    a {
+      text-decoration: none;
+      display: inline-block;
+      position: relative;
+
+      &:after {
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: #231f20;
+        transition: opacity  $t-duration, visibility $t-duration;
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+  }
+
+  .tabs__utilities {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 13px;
+    margin-bottom: 23px;
+
+    @include breakpoint-down(tablet) {
+      padding-right: 0;
+      margin-bottom: 35px;
+      display: block;
+      text-align: center;
+    }
+
+    @include breakpoint-down(mobile) {
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 8px;
+    }
+  }
+
+  .tab__search {
+    margin: 0 -5px;
+    max-width: 57.7%;
+    flex: 0 0 57.7%;
+
+    @include breakpoint-down(tablet) {
+      margin: 0;
+    }
+
+    @include breakpoint-down(mobile) {
+      max-width: 89.5%;
+      flex: 1;
+      margin: 0;
+    }
+
+    .tab__field-controls {
+      position: relative;
+
+      img {
+        position: absolute;
+        top: 8px;
+        left: 14px;
+        pointer-events: none;
+      }
+
+      .field--small {
+        padding: 10px 10px 7px 39px;
+
+        @include breakpoint-down(mobile) {
+          padding: 8px 11px 8px 46px;
+          font-size: 21px;
+          border-radius: 3px !important;
+          border-color: #ededed;
+        }
+      }
+    }
+  }
+
+  .tabs__body {
+    width: 100%;
+    position: relative;
+    min-height: 385px;
+
+    @include breakpoint-down(tablet) {
+      min-height: 400px;
+    }
+
+    .tab {
+      display: none;
+      flex: 1;
+      transition: transform .5s, opacity .5s;
+      transform: scale(.9);
+      opacity: 0;
+
+      &.is-current {
+        display: block;
+      }
+      &.translating-in {
+        transform: scale(1);
+        opacity: 1;
+      }
+
+      &.translating {
+        transform: scale(.9);
+        opacity: 0;
+      }
+    }
+  }
+
+  .tab__body {
+    flex: 1;
+    text-align: center;
+    padding: 0 0 10px 40px;
+
+    @include breakpoint-down(tablet) {
+      padding: 0;
+    }
+  }
+
+  .tab__image {
+    max-width: 100%;
+    flex: 0 0 100%;
+    margin-bottom: 60px;
+
+    @include breakpoint-down(tablet) {
+      margin-bottom: 30px;
+    }
+  }
+
+  .tab__content {
+    max-width: 100%;
+    flex: 0 0 100%;
+    color: #939292;
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 0.025em;
+  }
+
+  .tab__cols {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 0 0 56.5%;
+    max-width: 56.5%;
+
+    @include breakpoint-down(tablet) {
+      justify-content: center;
+      margin-bottom: 15px;
+      max-width: none;
+    }
+
+    @include breakpoint-down(mobile) {
+      display: block;
+    }
+  }
+
+  .tab__col {
+    max-width: 100%;
+    flex: 1;
+  }
+
+  .tab__col--size1 {
+    max-width: 35.5%;
+    flex: 0 0 35.5%;
+    margin-right: 14px;
+
+    @include breakpoint-down(tablet) {
+      max-width: 45%;
+      flex: 0 0 45%;
+    }
+
+    @include breakpoint-down(mobile) {
+      max-width: 85%;
+      margin: 0 auto 10px;
+
+    }
+  }
+
+  .tab__col--size2 {
+    max-width: 53.5%;
+    flex: 0 0 53.5%;
+
+    @include breakpoint-down(tablet) {
+      max-width: 45%;
+      flex: 0 0 45%;
+    }
+
+    @include breakpoint-down(mobile) {
+      max-width: 85%;
+      margin: 0 auto 10px;
+
+    }
+  }
+
+  .tab__actions {
+    @include breakpoint-down(mobile) {
+      display: flex;
+      flex-flow: column wrap;
+      align-items: center;
+    }
+
+    a {
+      margin-right: 8px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      @include breakpoint-down(mobile) {
+        margin: 0 0 10px 0;
+      }
+    }
+  }
+}
+
+.tabs--alt {
+  background: none;
+  border: 0;
+  box-shadow: none;
+  padding: 0;
+
+  .tabs__head {
+    margin-bottom: 19px;
+
+    @include breakpoint-down(mobile) {
+      background: none;
+      padding: 0;
+    }
+  }
+
+  .tabs__nav {
+    padding: 0 4px;
+    margin-bottom: 0;
+
+    @include breakpoint-down(mobile) {
+      font-size: 20px;
+    }
+
+    ul {
+      @include breakpoint-down(mobile) {
+        justify-content: flex-start;
+        padding-right: 0;
+      }
+    }
+
+    li {
+      margin-right: 26px;
+
+      @include breakpoint-down(mobile) {
+        padding-right: 0;
+      }
+
+      &:before {
+        display: none;
+      }
+
+      &:after {
+        background: none;
+      }
+
+      &:last-child {
+        flex: 0 0 auto;
+      }
+    }
+
+    li.is-current {
+      &:after {
+        background: #231F20;
+      }
+    }
+  }
+
+  .tabs__utilities--alt {
+    padding: 0;
+    margin-bottom: 10px;
+  }
+}

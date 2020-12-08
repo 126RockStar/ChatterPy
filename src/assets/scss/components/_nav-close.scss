@@ -1,0 +1,15 @@
+/* ------------------------------------------------------------ *\
+	Nav close
+\* ------------------------------------------------------------ */
+
+.nav-close {
+	text-decoration: none;
+	display: none;
+	font-family: $ff-futura-pt;
+	font-size: 20px;
+	line-height: 1.20;
+
+	@include breakpoint-down(mobile) {
+		display: inline-block;
+	}
+}

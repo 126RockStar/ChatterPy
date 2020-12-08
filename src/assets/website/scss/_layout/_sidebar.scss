@@ -1,0 +1,186 @@
+.widget {
+    padding: 30px 15px;
+    border: 1px solid #e5e5e5;
+    margin-bottom: 30px;
+    @media screen and (min-width: 375px) {
+        padding: 30px;
+    }
+    @media screen and (min-width: 768px) {
+        margin-bottom: 45px;
+    }
+    .widget-header {
+        .title {
+            font-size: 22px;
+            line-height: 27px;
+            text-transform: capitalize;
+            margin-top: -6px;
+            margin-bottom: 0;
+            &::after {
+                width: 40px;
+                height: 2px;
+                content: "";
+                background: $theme-color;
+                display: block;
+                margin-bottom: 16px;
+                margin-top: 11px;
+            }
+        }
+    }
+    &.widget-search {
+        .widget-search-form {
+            position: relative;
+            input {
+                height: 42px;
+                background: transparent;
+                padding: 0;
+                border-bottom: 1px solid #e5e5e5;
+                @include border-radius(0);
+                &:focus {
+                    border: none;
+                    border-bottom: 1px solid #e5e5e5;
+                }
+            }
+            button {
+                height: 42px;
+                width: 42px;
+                position: absolute;
+                top: 0;
+                right: 0;
+                background: transparent;
+                text-align: right;
+                border: none;
+            }
+        }
+    }
+    &.widget-archive,
+    &.widget-category {
+        ul {
+            li {
+                text-transform: capitalize;
+                line-height: 1.688;
+                border-bottom: 1px solid #e5e5e5;
+                padding: 0;
+                a {
+                    padding: 10px 0;
+                    color: $body-color;
+                    display: flex;
+                    justify-content: space-between;
+                    &:hover {
+                        color: $theme-color;
+                        padding-left: 3px;
+                    }
+                }
+            }
+        }
+    }
+    &.widget-category {
+        ul {
+            li {
+                a {
+                    .amount {
+                        &::after {
+                            content: ")";
+                        }
+                        &::before {
+                            content: "(";
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.widget-tags {
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            margin: -5px;
+            margin-top: 31px;
+            li {
+                padding: 5px;
+                a {
+                    padding: 5px 15px;
+                    font-weight: 600;
+                    border: 1px solid #e5e5e5;
+                    color: $body-color;
+                    &:hover {
+                        color: $theme-color;
+                        border-color: $theme-color;
+                    }
+                }
+            }
+        }
+    }
+    &.widget-post {
+        ul {
+            li {
+                border-bottom: 1px solid #e5e5e5;
+                padding: 10px 0;
+                .sub-title {
+                    font-weight: 500;
+                    font-size: 18px;
+                    line-height: 1.5;
+                    margin-bottom: 4px;
+                    a {
+                        color: $title-color;
+                    }
+                    @media screen and (max-width: 400px) {
+                        font-size: 16px;
+                    }
+                }
+                p {
+                    font-size: 14px;
+                    margin: 0;
+                    color: $theme-color;
+                    a {
+                        color: $theme-color;
+                        margin-left: 5px;
+                    }
+                }
+                &:hover {
+                    .sub-title a,
+                    p a {
+                        color: $theme-color;
+                    }
+                }
+            }
+        }
+    }
+    &.widget-download {
+        ul {
+            li {
+                font-weight: 600;
+                text-transform: capitalize;
+                line-height: 1.688;
+                border-bottom: 1px solid #e5e5e5;
+                padding: 0;
+                a {
+                    padding: 10px 0;
+                    color: $body-color;
+                    display: flex;
+                    justify-content: space-between;
+                    &:after {
+                        content : "\f11f";
+                        font-family: Flaticon;
+                        font-weight: 600;
+                    }
+                    &:hover {
+                        color: $theme-color;
+                        padding-left: 3px;
+                    }
+                }
+            }
+        }
+    }
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+.sidebar {
+    @include breakpoint(max-lg) {
+        margin-top: 80px;
+    }
+    position: sticky;
+    @include breakpoint(lg) {
+        top: 104px;
+    }
+}

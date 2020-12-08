@@ -1,0 +1,27 @@
+/* ------------------------------------------------------------ *\
+	Checkboxes
+\* ------------------------------------------------------------ */
+
+.checkboxes {
+	ul {
+		list-style-type: none;
+		display: flex;
+		flex-wrap: wrap;
+
+		@include breakpoint-down(mobile) {
+			display: block;
+		}
+	}
+
+	li {
+		margin-right: 30px;
+
+		@include breakpoint-down(mobile) {
+			margin: 0 0 25px;
+		}
+
+		&:last-child {
+			margin: 0;
+		}
+	}
+}

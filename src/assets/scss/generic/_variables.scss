@@ -1,0 +1,36 @@
+//Variables
+$font-size-base             : 16px;
+$font-weight-base           : 300;
+$line-height-base           : 1.2;
+
+$ff-sans-serif              : "Futura BT", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$ff-serif                   : Georgia, "Times New Roman", Times, serif;
+$ff-futura-condensed        : 'Futura Condensed', sans-serif;
+$ff-futura-bd-condensed     : 'Futura BdCn BT', sans-serif;
+$ff-futura-pt               : 'Futura PT', sans-serif;
+$t-duration                 : 0.4s;
+
+$shell-max-width            : 1650px;
+$shell-gutter               : 15px;
+
+$c-black                    : #000;
+$c-white                    : #fff;
+$c-base                     : #055590;
+$c-blue                     : #2d3092;
+$c-blue1                    : #2e3192;
+$c-orange                   : #ff8500;
+
+$radial-gradient-blue       : radial-gradient(ellipse at center, rgba(69,77,197,1) 0%,rgba(46,49,146,1) 100%);
+
+/*$responsive-ios             : 812px;*/
+$responsive-ios             : 767px;
+
+$breakpoints: (
+	mobile-small: 374px,
+	mobile-medium: 575px,
+	mobile: 767px,
+	admin-bar: 782px,
+	tablet: 1023px,
+	small-desktop: 1199px,
+	large-desktop: 1399px
+);

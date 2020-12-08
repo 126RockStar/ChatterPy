@@ -1,0 +1,218 @@
+/* ------------------------------------------------------------ *\
+	Accordions
+\* ------------------------------------------------------------ */
+
+.accordion {
+	.accordion__section {
+		margin-bottom: 45px;
+
+		@include breakpoint-down(mobile) {
+			margin-bottom: 50px;
+		}
+
+		&:last-child {
+			margin: 0;
+		}
+	}
+
+	.accordion__section--alt {
+		margin-bottom: 58px;
+
+		@include breakpoint-down(mobile) {
+			margin-bottom: 55px;
+		}
+
+		.accordion__head-content {
+			padding: 0;
+
+			@include breakpoint-down(mobile) {
+				display: block !important;
+				height: auto !important;
+			}
+		}
+	}
+
+	.accordion__section.is-current {
+		.accordion__head--size1 {
+			border-bottom: 2px solid  #808285;
+			margin-bottom: 16px;
+			padding-bottom: 23px;
+
+			@include breakpoint-down(mobile) {
+				border-bottom: 0;
+				margin-bottom: 0;
+				padding-bottom: 0;
+			}
+		}
+	}
+
+	.accordion__head h4 {
+		background: #D1D3D4;
+		font-size: 17px;
+		line-height: 1.2;
+		padding: 7px 20px 8px;
+		margin-bottom: 9px;
+		font-family: $ff-futura-pt;
+		text-transform: uppercase;
+
+		@include breakpoint-down(mobile) {
+			padding: 10px 23px 10px 14px;
+			background: none;
+			text-transform: capitalize;
+			font-size: 19px;
+			font-weight: 600;
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+			justify-content: space-between;
+			position: relative;
+		}
+
+		@media(max-width: 400px){
+			padding: 10px 5px 10px 5px;
+		}
+	}
+
+	.accordion__head--alt h4 {
+		margin-bottom: 14px;
+
+		@include breakpoint-down(mobile) {
+			margin-bottom: 10px;
+		}
+	}
+
+	.accordion__head--size1 {
+		transition: all $t-duration;
+	}
+
+	.accordion__head-content {
+		padding: 0 21px;
+		font-family: $ff-futura-pt;
+
+		@include breakpoint-down(mobile) {
+			padding: 0 15px;
+		}
+
+		strong {
+			font-size: 17px;
+
+			@include breakpoint-down(mobile) {
+				font-style: italic;
+				font-size: 22px;
+			}
+		}
+	}
+
+
+	.accordion__head-content p {
+		font-size: 17px;
+		font-weight: 400;
+
+		@include breakpoint-down(tablet) {
+			font-size: 16px;
+		}
+
+		@include breakpoint-down(mobile) {
+			line-height: 1.6;
+			vertical-align: middle;
+			display: inline-block;
+		}
+	}
+
+	.accordion__head-content--alt {
+		@include breakpoint-down(mobile) {
+			border-bottom: 1px solid  #808285;
+			padding: 5px 15px 9px;
+		}
+	}
+
+	.accordion__body--alt {
+		margin: 0 -23px;
+		padding-top: 83px;
+
+		@include breakpoint-down(small-desktop) {
+			margin: 0 -12px;
+		}
+
+		@include breakpoint-down(tablet) {
+			margin: 0 -7px;
+		}
+
+		@include breakpoint-down(mobile) {
+			padding-top: 30px;
+		}
+	}
+
+	.accordion__trigger {
+		display: inline-block;
+		color: #35399F;
+		font-weight: 700;
+		font-size: 17px;
+
+		@include breakpoint-down(mobile) {
+			font-size: 18px;
+			position: absolute;
+			top: 11px;
+			right: 21px;
+		}
+
+		@media(max-width: 400px){
+		  	right: 5px;
+		  	font-size: 16px;
+		  	top: 9px;
+		  }
+	}
+
+	.accordion__grid {
+		padding: 0 21px;
+
+		@include breakpoint-down(mobile) {
+			padding: 5px 10px;
+			position: relative;
+		}
+
+		@media(max-width: 400px){
+		  	padding: 5px;
+		  }
+	}
+
+	.accordion__grid--alt {
+	  border-bottom: 1px solid  #808285;
+	  margin-bottom: 13px;
+	  padding: 0 26px 6px 19px;
+
+	  @include breakpoint-down(mobile) {
+	  	padding: 5px 15px 9px;
+	  	margin-bottom: 6px;
+	  }
+
+	  @media(max-width: 400px){
+	  	padding: 5px 5px 9px;
+	  }
+	}
+
+	.accordion__text-alt {
+		text-indent: 5px;
+		position: relative;
+
+		@include breakpoint-down(mobile) {
+			text-indent: 0;
+		}
+
+		img {
+			position: absolute;
+			top: 0;
+			left: -25px;
+
+			@include breakpoint-down(mobile) {
+				position: static;
+				margin-left: -9px;
+			}
+
+			@media(max-width: 400px){
+				display: block;
+				margin: 0 auto;
+			}
+		}
+	}
+}

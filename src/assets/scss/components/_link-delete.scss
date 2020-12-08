@@ -1,0 +1,25 @@
+/* ------------------------------------------------------------ *\
+	Link delete
+\* ------------------------------------------------------------ */
+
+.link-delete {
+	display: inline-block;
+	max-width: 17px;
+	transition: opacity $t-duration;
+
+	&:hover {
+		opacity: .7;
+	}
+
+	img {
+		width: 17px;
+	}
+}
+
+.link-delete--big {
+	max-width: 28px;
+
+	img {
+		width: 28px;
+	}
+}

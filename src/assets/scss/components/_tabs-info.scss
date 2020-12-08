@@ -1,0 +1,436 @@
+/* ------------------------------------------------------------ *\
+  Tabs info
+\* ------------------------------------------------------------ */
+
+.tabs-info {
+  margin-top: 35px;
+
+  @include breakpoint-down(tablet) {
+    margin-top: 25px;
+  }
+
+  .tabs__head {
+    margin-bottom: 22px;
+  }
+
+  .tabs__nav {
+    text-transform: uppercase;
+    color: $c-blue1;
+    font-weight: 700;
+    font-size: 19px;
+    font-family: $ff-futura-bd-condensed;
+    padding-right: 7px;
+
+    @include breakpoint-down(small-desktop) {
+      padding-right: 0;
+      font-size: 22px;
+    }
+
+    @include breakpoint-down(mobile) {
+      font-size: 18px;
+    }
+
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+
+      @include breakpoint-down(tablet) {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+    li {
+      position: relative;
+      margin-right: 20px;
+
+      &:before {
+        content: '';
+        position: absolute;
+        height: 2px;
+        background: #58595e;
+        top: 100%;
+        width: 100%;
+        opacity: 0;
+        margin-top: 4px;
+        visibility: hidden;
+        transition: opacity $t-duration, visibility $t-duration;
+      }
+
+      &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: -10px;
+        width: 2px;
+        height: 100%;
+        background: $c-blue1;
+      }
+
+      &:last-child {
+        margin-right: 0;
+
+        &:after {
+          display: none;
+        }
+      }
+
+      @include breakpoint-down(tablet) {
+        display: inline-block;
+        margin: 0 0 10px 0;
+
+        &:after {
+          display: none;
+        }
+      }
+    }
+
+    li.is-current {
+      &:before {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+
+    a {
+      display: inline-block;
+      text-decoration: none;
+    }
+  }
+
+  .tabs__body {
+    width: 100%;
+    position: relative;
+    padding: 0 13px;
+    /*min-height: 433px;*/
+
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      min-height: 433px;
+    }
+
+    @include breakpoint-down(tablet) {
+      padding: 0 10px;
+    }
+
+    .tab {
+      display: none;
+      flex: 1;
+      transition: transform .5s, opacity .5s;
+      transform: scale(.9);
+      opacity: 0;
+
+      &.is-current {
+        display: block;
+      }
+      &.translating-in {
+        transform: scale(1);
+        opacity: 1;
+      }
+
+      &.translating {
+        transform: scale(.9);
+        opacity: 0;
+      }
+    }
+  }
+
+  .tab__content {
+    .tab__btn {
+      margin: 0 5px 5px 0;
+
+      &:last-child {
+        margin: 0;
+      }
+    }
+  }
+
+  .tab__content--alt {
+    padding-top: 10px;
+    text-align: center;
+    margin-bottom: 23px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+
+    @include breakpoint-down(tablet) {
+      padding: 20px 0 0;
+      margin-bottom: 40px;
+    }
+  }
+
+  .tab__actions {
+    text-align: center;
+  }
+
+  .tab__actions--alt {
+    margin-top: 28px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 6px 0 17px;
+
+    @media(max-width: 1300px){
+      padding: 0;
+    }
+
+    @include breakpoint-down(small-desktop) {
+      flex-direction: column;
+      align-items: center;
+
+      .tab__btn {
+        margin-bottom: 10px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  .tab__textarea {
+    resize: none;
+    min-height: 102px;
+    width: 100%;
+    background: none;
+    border: 1px solid  #b9babc;
+    padding: 5px;
+    font-family: $ff-futura-condensed;
+    font-size: 18px;
+    color: $c-blue1;
+    transition: border-color $t-duration;
+
+    &:focus {
+      border-color: $c-blue1;
+    }
+  }
+
+  .tab__row {
+    margin-bottom: 15px;
+
+    &:last-child {
+      margin: 0;
+    }
+
+    strong {
+      font-family: $ff-futura-bd-condensed;
+      font-size: 19px;
+      display: block;
+      color: $c-blue1;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+
+      @include breakpoint-down(tablet) {
+        font-size: 20px;
+        margin-bottom: 10px;
+      }
+
+      @include breakpoint-down(mobile) {
+        font-size: 18px;
+      }
+    }
+  }
+
+  .tab__row--fields {
+    margin-bottom: 5px;
+
+    strong {
+      margin-bottom: 6px;
+    }
+  }
+
+  .tab__row-items {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 23px;
+    margin: 0 -6px;
+    font-family: $ff-futura-condensed;
+    color: $c-blue1;
+
+    @media(max-width: 1300px){
+      padding: 0 20px;
+      margin: 0 -5px;
+    }
+
+    @include breakpoint-down(tablet) {
+      display: block;
+      margin: 0;
+      padding: 0 10px ;
+    }
+  }
+
+  .tab__tags {
+    max-width: 33.33%;
+    flex: 0 0 33.33%;
+    padding: 0 6px;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+
+    @media(max-width: 1300px){
+      padding: 0 5px;
+    }
+
+    @include breakpoint-down(tablet) {
+      padding: 0;
+      margin-bottom: 5px;
+      max-width: 85%;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    @include breakpoint-down(mobile) {
+      display: block;
+      font-size: 14px;
+      max-width: 70%;
+    }
+
+    p {
+      text-align: center;
+      border: 2px solid  $c-blue1;
+      border-radius: 12px;
+      font-size: 13px;
+    }
+  }
+
+  .tab__fields {
+    max-width: 50%;
+    flex: 0 0 50%;
+    font-size: 21px;
+    line-height: 1;
+    margin-bottom: 1px;
+    padding: 0 6px;
+    margin-bottom: 5px;
+
+    @media(max-width: 1300px){
+      font-size: 20px;
+      padding: 0 5px;
+    }
+
+    @include breakpoint-down(tablet) {
+      padding: 0;
+      max-width: 85%;
+      margin-bottom: 5px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    @include breakpoint-down(mobile) {
+      font-size: 16px;
+    }
+  }
+
+  .tab__link-add {
+    position: absolute;
+    top: -1px;
+    right: 0;
+  }
+
+  .tab__btn {
+    border-radius: 10px;
+    min-width: 154px;
+    border: 2px solid  $c-blue1;
+    background: $c-blue1;
+    color: $c-white;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 21px;
+    display: inline-block;
+    padding: 4px;
+    text-align: center;
+    transition: color $t-duration, background $t-duration, opacity $t-duration;
+    font-family: $ff-futura-bd-condensed;
+
+    &:hover {
+      background: none;
+      color: $c-blue1;
+    }
+
+    @include breakpoint-down(small-desktop) {
+      min-width: auto;
+      width: 100%;
+      max-width: 192px;
+    }
+
+    @include breakpoint-down(tablet) {
+      font-size: 20px;
+    }
+
+    span {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
+
+    img {
+      margin-right: 14px;
+
+      @include breakpoint-down(tablet) {
+        max-width: 20px;
+        margin-right: 5px;
+      }
+    }
+  }
+
+  .tab__btn--plain {
+    min-width: 181px;
+    background: none;
+    color: $c-blue1;
+    padding: 4px;
+    font-size: 24px;
+    border-radius: 8px;
+
+    &:hover {
+      opacity: 0.7;
+    }
+
+    @include breakpoint-down(tablet) {
+      font-size: 22px;
+    }
+  }
+
+  .tab__btn--alt {
+    font-size: 13px;
+    text-transform: uppercase;
+    min-width: 92px;
+    padding: 2px 4px 1px;
+    border-radius: 14px;
+    transition: opacity $t-duration;
+
+    &:hover {
+      opacity: 0.6;
+      background: $c-blue1;
+      color: $c-white;
+    }
+
+    img {
+      margin-right: 2px;
+
+      @include breakpoint-down(tablet) {
+        max-width: 15px;
+        margin: 0 2px 3px 0;
+      }
+    }
+
+    span {
+      display: inline-block;
+      width: auto;
+    }
+  }
+
+  .tab__btn--alt-red {
+    background: #ff0000;
+    border-color: #f00;
+
+    &:hover {
+      background: #f00;
+    }
+  }
+}

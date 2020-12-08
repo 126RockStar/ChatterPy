@@ -1,0 +1,120 @@
+/* ------------------------------------------------------------ *\
+	Header
+\* ------------------------------------------------------------ */
+
+.header {
+  background: #e4e4e4;
+  position: relative;
+  z-index: 99;
+  box-shadow: 0 0 5px 0 rgba(0,0,0,.25);
+
+  .header__inner {
+    padding: 22px 18px 21px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+
+    @include breakpoint-down(tablet) {
+      padding: 15px 0;
+    }
+
+    @include breakpoint-down(mobile) {
+      padding: 15px;
+      margin: 0 -15px;
+    }
+  }
+
+  .header__content {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    z-index: 10;
+    flex: 1;
+  }
+
+  .header__nav {
+    margin-top: -10px;
+
+    @include breakpoint-down(mobile) {
+      margin-top: 0;
+    }
+  }
+}
+
+.header--alt {
+  @include breakpoint-down(mobile) {
+    box-shadow: none;
+  }
+
+  .header__inner {
+    @include breakpoint-down(mobile) {
+      padding: 22px 0 0 9px;
+    }
+  }
+
+  .nav-trigger {
+    @include breakpoint-down(mobile) {
+      position: absolute;
+      top: 27px;
+      left: 22px;
+      z-index: 12;
+    }
+  }
+
+  .header__content {
+    @include breakpoint-down(mobile) {
+      justify-content: center;
+    }
+
+    .logo {
+      @include breakpoint-down(mobile) {
+        max-width: 185px;
+      }
+
+      @media(max-width: 400px){
+        max-width: 160px;
+      }
+    }
+  }
+}
+
+.header--chats {
+  @include breakpoint-down(mobile) {
+    box-shadow: none;
+  }
+
+  .header__inner {
+    @include breakpoint-down(mobile) {
+      margin: 0;
+      text-align: center;
+      padding: 27px 0 8px 15px;
+      display: block;
+    }
+  }
+
+  .header__content {
+    @include breakpoint-down(mobile) {
+      display: inline-block;
+    }
+  }
+
+  .nav-trigger--alt {
+    @include breakpoint-down(mobile) {
+      position: absolute;
+      top: 26px;
+      left: 3px;
+      z-index: 20;
+    }
+  }
+
+  .link-add-new {
+    @include breakpoint-down(mobile) {
+      max-width: 48px;
+      top: 24px;
+      right: 6px;
+    }
+  }
+}

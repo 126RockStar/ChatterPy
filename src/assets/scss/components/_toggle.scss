@@ -1,0 +1,82 @@
+/* ------------------------------------------------------------ *\
+  Toggle switch
+\* ------------------------------------------------------------ */
+.toggle {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 50px;
+  flex: 0 0 50px;
+  line-height: 1.88;
+  font-weight: 600;
+  position: relative;
+
+  input {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    &:checked + label {
+      color: $c-base;
+
+      & + label {
+        color: $c-blue;
+      }
+    }
+
+    &:checked ~ .toggle__switch {
+      background: #6fa7e1;
+      &:before {
+        transform: translateX(30px);
+      }
+    }
+  }
+
+  .toggle__label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 27px;
+    height: 27px;
+    background: $c-base;
+    display: block;
+    margin-bottom: 0;
+    order: 0;
+    transition: color $t-duration;
+    opacity: 0;
+
+    & + label {
+      order: 2;
+      color: $c-base;
+      left: initial;
+      right: 0;
+    }
+  }
+
+  .toggle__switch {
+    position: relative;
+    max-width: 50px;
+    flex: 0 0 50px;
+    height: 27px;
+    border-radius: 40px;
+    background: #999bca;
+    display: block;
+    transition: color $t-duration, background $t-duration;
+    order: 1;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 27px;
+      height: 27px;
+      border-radius: 50%;
+      background: $c-blue;
+      transition: transform $t-duration;
+    }
+  }
+}

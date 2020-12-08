@@ -1,0 +1,232 @@
+/* ------------------------------------------------------------ *\
+  Popup
+\* ------------------------------------------------------------ */
+
+.popup {
+  position: relative;
+
+  .popup__close {
+    position: absolute;
+    top: 4px;
+    right: 8px;
+    color: $c-white;
+    text-decoration: none;
+    display: inline-block;
+    font-weight: 400;
+    font-size: 10px;
+  }
+
+  .popup__menu {
+    position: absolute;
+    bottom: 100%;
+    right: -78px;
+    margin: 0 0 26px 0;
+    background: $c-white;
+    border-radius: 9px;
+    min-width: 340px;
+    border: 2px solid  $c-blue1;
+    transform-origin: center 100%;
+    transform: rotateX(20deg) scale(0.8);
+    opacity: 0;
+    visibility: hidden;
+    transition: all $t-duration;
+
+    min-width: 353px;
+
+    @include breakpoint-down(tablet) {
+      min-width: 260px;
+    }
+
+    @include breakpoint-down(mobile) {
+      min-width: 190px;
+    }
+  }
+
+  .popup__menu-head {
+    position: relative;
+    background: $c-blue1;
+    padding: 23px 9px 11px;
+    border-radius: 7px 7px 0 0;
+
+    padding: 23px 6px 11px;
+
+    p {
+      text-align: left;
+      color: $c-white;
+    }
+
+    img {
+      position: absolute;
+      bottom: 16px;
+      left: 16px;
+      pointer-events: none;
+    }
+  }
+
+  .popup__menu-body {
+    padding: 8px 5px;
+    position: relative;
+
+    &:before {
+      content: '';
+      position: absolute;
+      bottom: -24px;
+      right: 63px;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 23px 12px 0 12px;
+      border-color: $c-blue1 transparent transparent transparent;
+
+      right: 67px;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: -19px;
+      right: 65px;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 19px 10px 0 10px;
+      border-color: $c-white transparent transparent transparent;
+
+      right: 69px;
+    }
+
+    p {
+      margin-top: 12px;
+      text-align: left;
+      color: $c-blue1;
+      font-size: 16px;
+      font-weight: 400;
+      padding-left: 10px;
+      line-height: 1;
+
+      @include breakpoint-down(mobile) {
+        font-size: 12px;
+      }
+
+      a {
+        text-decoration: none;
+        display: inline-block;
+      }
+    }
+  }
+}
+
+.popup.is-active {
+  .popup__menu {
+    transform: rotateX(0deg) scale(1);
+    pointer-events: auto;
+    visibility: visible;
+    opacity: 1;
+    right: -70px;
+  }
+}
+
+.popup--calendar {
+  .popup__menu {
+    min-width: 366px;
+
+    @include breakpoint-down(mobile) {
+      min-width: 190px;
+      right: -30px;
+    }
+  }
+
+  .popup__menu-head {
+    padding: 8px 19px 5px;
+
+    p {
+      font-size: 18px;
+      font-weight: 400;
+
+      @include breakpoint-down(mobile) {
+        font-size: 14px;
+      }
+    }
+  }
+
+  .popup__menu-body {
+    padding: 31px 20px 52px 25px;
+
+    &:before {
+      right: 72px;
+    }
+
+    &:after {
+      right: 74px;
+    }
+
+    @include breakpoint-down(mobile) {
+      padding: 10px;
+
+      &:before {
+        right: 6px;
+      }
+
+      &:after {
+        right: 8px;
+      }
+    }
+  }
+
+  .popup__cols {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  .popup__col {
+    max-width: 100%;
+    flex: 1;
+
+    @include breakpoint-down(mobile) {
+      margin-bottom: 10px;
+    }
+  }
+
+  .popup__col--size1 {
+    max-width: 59%;
+    flex: 0 0 59%;
+
+    @include breakpoint-down(mobile) {
+      max-width: 100%;
+      flex: 0 0 100%;
+    }
+  }
+
+  .popup__col--size2 {
+    max-width: 33%;
+    flex: 0 0 33%;
+
+    @include breakpoint-down(mobile) {
+      max-width: 100%;
+      flex: 0 0 100%;
+    }
+  }
+
+  .popup__date {
+    width: 100%;
+    background: none;
+    border: 0;
+    text-align: center;
+    color: $c-blue1;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: 0.025em;
+    pointer-events: none;
+  }
+}
+
+.popup--calendar.is-active {
+  .popup__menu {
+    @include breakpoint-down(mobile) {
+      right: -10px;
+    }
+  }
+}

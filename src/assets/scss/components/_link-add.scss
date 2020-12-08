@@ -1,0 +1,16 @@
+/* ------------------------------------------------------------ *\
+	Link add
+\* ------------------------------------------------------------ */
+
+.link-add {
+	display: inline-block;
+	text-decoration: none;
+	color: $c-blue1;
+	font-weight: 700;
+	font-style: italic;
+	font-size: 34px;
+
+	@include breakpoint-down(mobile) {
+		font-size: 30px;
+	}
+}

@@ -1,0 +1,21 @@
+/* ------------------------------------------------------------ *\
+  Link add new
+\* ------------------------------------------------------------ */
+
+.link-add-new {
+  display: inline-block;
+  position: absolute;
+  top: 18px;
+  right: 7px;
+  transition: opacity $t-duration;
+
+  &:hover {
+    opacity: .7;
+  }
+
+  @include breakpoint-down(tablet) {
+    max-width: 25px;
+    top: 10px;
+    right: 5px;
+  }
+}

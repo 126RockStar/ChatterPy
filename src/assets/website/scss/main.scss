@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Open+Sans:400,400i&display=swap');
+@import '../vendor/animate.css';
+@import '../vendor/bootstrap.min.css';
+@import '../vendor/fontawesome.min.css';
+@import '../vendor/jqvmap.min.css';
+@import '../vendor/lightcase.css';
+@import '../vendor/nice-select.css';
+@import '../vendor/swiper.min.css';
+
+@import '_abstracts/_mixins';
+@import '_abstracts/_variables';
+@import '_base/_reset';
+@import '_base/_about';
+@import '_base/_global';
+@import '_base/_typography';
+@import '_flaticon/_flaticon';
+@import '_layout/_footer';
+@import '_layout/_forms';
+@import '_layout/_header';
+@import '_layout/_banner';
+@import '_layout/_sidebar';
+@import '_layout/_section';
+@import '_layout/_blog';
+@import '_components/_buttons';

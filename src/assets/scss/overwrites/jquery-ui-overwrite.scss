@@ -1,0 +1,124 @@
+/* ------------------------------------------------------------ *\
+  Jquery ui overwrite
+\* ------------------------------------------------------------ */
+
+.ui-datepicker {
+  width: 100%;
+  padding: 3px 2px;
+  box-shadow: 2px 2px 14px -2px rgba(0, 0, 0, 0.5);
+
+  th {
+    padding: 3px 1px;
+    font-size: 11px;
+
+    &:first-child span {
+      color: #fe1514;
+    }
+  }
+
+  td:first-child a {
+    color: #fe1514;
+  }
+
+  .ui-datepicker-calendar {
+    font-size: 14px;
+    text-align: center;
+
+    thead {
+      background: #eef9ff;
+    }
+  }
+
+  .ui-datepicker-prev {
+    background: none !important;
+    border: 0 !important;
+    left: 2px !important;
+    top: 0;
+    width: 29px;
+    height: 29px;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 4px 6px 4px 0;
+      border-color: transparent $c-white transparent transparent;
+    }
+  }
+
+  .ui-datepicker-next {
+    background: none !important;
+    border: 0 !important;
+    right: 2px !important;
+    top: 0;
+    width: 29px;
+    height: 29px;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 4px 0 4px 6px;
+      border-color: transparent transparent transparent $c-white;
+    }
+  }
+
+  .ui-datepicker-prev span,
+  .ui-datepicker-next span {
+    display: none;
+  }
+
+  .ui-state-default {
+    background: none;
+    border: 0;
+    color: $c-black;
+    font-weight: 700;
+    padding: 2px 1px;
+  }
+
+  .ui-datepicker-header {
+    padding: 0;
+    background: #0e68be;
+    color: $c-white;
+    padding: 4px;
+    margin-bottom: 1px;
+  }
+
+  .ui-datepicker-title {
+    line-height: 1;
+    margin: 0;
+    font-size: 19px;
+    font-weight: 400;
+  }
+
+  .ui-datepicker-year {
+    display: none;
+  }
+
+  .ui-corner-all,
+  .ui-corner-right,
+  .ui-corner-br,
+  .ui-corner-bottom,
+  .ui-corner-left,
+  .ui-corner-bl,
+  .ui-corner-top,
+  .ui-corner-tr,
+  .ui-corner-tl {
+    border-radius: 0;
+  }
+}
+
+.ui-widget.ui-widget-content {
+  border: 0;
+  border-radius: 0;
+}

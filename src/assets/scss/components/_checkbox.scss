@@ -1,0 +1,50 @@
+/* ------------------------------------------------------------ *\
+	Checkbox
+\* ------------------------------------------------------------ */
+
+.checkbox {
+	input {
+		display: none;
+	}
+
+	input:checked ~ label:after {
+		opacity: 1;
+		visibility: visible;
+	}
+
+	label {
+		font-size: 15px;
+		font-weight: 700;
+		font-style: italic;
+		display: inline-block;
+		position: relative;
+		padding-left: 36px;
+
+		&:before {
+			content: '';
+			position: absolute;
+			top: -8px;
+			left: 0;
+			border: 2px solid  #E6E7E8;
+			width: 28px;
+			height: 28px;
+			border-radius: 6px;
+		}
+
+		&:after {
+			content: '';
+			position: absolute;
+			top: -2px;
+			left: 10px;
+			display: inline-block;
+			transform: rotate(45deg);
+			height: 14px;
+			width: 8px;
+			border-bottom: 2px solid $c-blue1;
+			border-right: 2px solid $c-blue1;
+			opacity: 0;
+			visibility: hidden;
+			transition: opacity $t-duration, visibility $t-duration;
+		}
+	}
+}

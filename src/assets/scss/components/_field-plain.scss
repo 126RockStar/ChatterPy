@@ -1,0 +1,47 @@
+/* ------------------------------------------------------------ *\
+  Field plain
+\* ------------------------------------------------------------ */
+
+input::placeholder {
+  color: inherit;
+  opacity: 1;
+}
+
+textarea::placeholder {
+  color: inherit;
+  opacity: 1;
+}
+
+input:-webkit-autofill {
+  -webkit-text-fill-color: inherit;
+  -webkit-box-shadow: 0 0 0 1000px #fff inset;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.field-plain {
+  color: rgba(46,46,146,0.5);
+  width: 100%;
+  background: $c-white;
+  border: 0;
+  border-bottom: 2px solid  #e5e5f1;
+  font-weight: 500;
+  font-style: italic;
+  padding: 11px 2px 17px;
+  font-size: 19px;
+  line-height: 1;
+  transition: color $t-duration, border-color $t-duration;
+
+  &:focus {
+    border-color: $c-blue1;
+    color: $c-blue1;
+  }
+}

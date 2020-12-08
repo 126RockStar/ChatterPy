@@ -1,0 +1,119 @@
+/* ------------------------------------------------------------ *\
+  Form private
+\* ------------------------------------------------------------ */
+
+.form-private {
+  background: $c-orange;
+  padding: 7px 10px 11px 12px;
+
+  .form__head {
+    margin-bottom: 7px;
+  }
+
+  .form__head-header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 400;
+    font-size: 11px;
+    padding: 0 10px 0 16px;
+    margin-bottom: 5px;
+
+    a {
+      display: inline-block;
+      text-decoration: none;
+    }
+  }
+
+  .form__head-body {
+    span {
+      font-style: italic;
+      border-radius: 7px;
+      color: #1828a1;
+      border: 2px solid  #1828a1;
+      min-width: 103px;
+      display: inline-block;
+      text-align: center;
+      font-size: 10px;
+      font-weight: 400;
+      padding: 4px 5px 3px;
+      margin-right: 5px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      @include breakpoint-down(tablet) {
+        min-width: 100px;
+      }
+
+      @include breakpoint-down(mobile) {
+        display: block;
+        max-width: 75%;
+        margin-bottom: 5px;
+      }
+    }
+  }
+
+  .form__controls {
+    position: relative;
+
+    .form__btn {
+      position: absolute;
+      top: 6px;
+      right: 5px;
+    }
+  }
+
+  .form__field {
+    width: 100%;
+    border: 0;
+    background: #eaeaea;
+    border-radius: 7px;
+    padding: 11px 70px 11px 5px;
+    line-height: 1;
+  }
+
+  .form__btn {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+    appearance: none;
+    background: #ffaa4d;
+    position: relative;
+    overflow: hidden;
+    min-width: 57px;
+    padding: 6px;
+    font-size: 12px;
+    border-radius: 11px;
+    transition: opacity $t-duration;
+    color: #0a0e7a;
+    font-weight: 700;
+    border: 0;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: -17px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 120%;
+      height: 110%;
+      background: $c-orange;
+      border-radius: 50%;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    &:hover {
+      opacity: .7;
+    }
+
+    span {
+      position: relative;
+    }
+  }
+}

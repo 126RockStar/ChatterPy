@@ -1,0 +1,25 @@
+/* ------------------------------------------------------------ *\
+  Link add more
+\* ------------------------------------------------------------ */
+
+.link-add-more {
+  font-family: $ff-futura-bd-condensed;
+  font-weight: 700;
+  text-decoration: none;
+  width: 14px;
+  height: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  color: $c-white;
+  background: $c-blue1;
+  border-radius: 50%;
+  transition: opacity $t-duration;
+  font-size: 11px;
+  line-height: 0.8;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}

@@ -1,0 +1,87 @@
+/* ------------------------------------------------------------ *\
+	Select
+\* ------------------------------------------------------------ */
+
+.select {
+  position: relative;
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 13px;
+    right: 15px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 8px 5px 0 5px;
+    border-color: #c6c6c6 transparent transparent transparent;
+    pointer-events: none;
+  }
+
+  select {
+    width: 100%;
+    background: $c-white;
+    border-radius: 9px !important;
+    border: 1px solid  #cecece;
+    color: #939292;
+    font-weight: 400;
+    padding: 9px 11px 8px;
+    line-height: 1;
+    font-size: 15px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: '';
+  }
+
+  select::-ms-expand {
+    display: none;
+  }
+}
+
+.select--alt {
+  select {
+    border-radius: 4px !important;
+  }
+}
+
+.select--plain {
+  &:after {
+    border-color: $c-blue1 transparent transparent transparent;
+    border-width: 6px 3px 0 3px;
+    top: 10px;
+    right: 2px;
+  }
+
+  select {
+    color: $c-blue1;
+    border: 0;
+    border-bottom: 1px solid  $c-blue1;
+    border-radius: 0 !important;
+    padding: 7px 3px 0;
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  .select__delimiter {
+    position: absolute;
+    top: 3px;
+    right: -6px;
+  }
+}
+
+.select--rounded {
+  &:after {
+    border-width: 10px 5px 0 5px;
+    border-color: $c-black transparent transparent transparent;
+    top: 50%;
+    right: 27px;
+    transform: translateY(-50%);
+  }
+
+  select {
+    border-radius: 16px !important;
+    padding: 12px 15px;
+
+  }
+}

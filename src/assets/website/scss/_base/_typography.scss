@@ -1,0 +1,181 @@
+html {
+    font-size: 18px;
+    scroll-behavior: smooth;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-size: 18px;
+    color: $body-color;
+    line-height: $lh-p;
+    overflow-x: hidden;
+    font-family: $opensans !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 700 !important;
+    margin: 0;
+    line-height: 1.4;
+    color: $title-color;
+    font-family: $Montserrat !important;
+    a {
+        color: $title-color;
+        &:hover {
+            color: $theme-color;
+        }
+    }
+}
+h1 {
+    font-size: $fs-h1;
+}
+h2 {
+    font-size: $fs-h2;
+    margin-top: -14px;
+    @include breakpoint(sm) {
+        line-height: 1.2;
+    }
+}
+h3 {
+    font-size: $fs-h3;
+}
+h4 {
+    font-size: $fs-h4;
+    margin-top: -10px;
+    margin-bottom: 22px;
+}
+h5 {
+    font-size: $fs-h5;
+    margin-top: -10px;
+    margin-bottom: 18px;
+}
+h6 {
+    font-size: $fs-h6;
+}
+p {
+    margin-top: -12px;
+    &:last-child {
+        margin-bottom: -8px;
+    }
+}
+@include breakpoint (sm) {
+    h1 {
+        font-size: $fs-sm-h1;
+    }
+    h2 {
+        font-size: $fs-sm-h2;
+        margin-top: -16px;
+    }
+    h3 {
+        font-size: $fs-sm-h3;
+    }
+    h4 {
+        font-size: $fs-sm-h4;
+        margin-top: -12px;
+        margin-bottom: 27px;
+    }
+    h5 {
+        font-size: $fs-sm-h5;
+        margin-top: -10px;
+        margin-bottom: 22px;
+    }
+    h6 {
+        font-size: $fs-sm-h6;
+    }
+}
+
+a {
+    display: inline-block;
+    @include transition($transition);
+    &:hover {
+        text-decoration: none;
+        color: inherit;
+    }
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    li {
+        list-style: none;
+        padding: 5px 0;
+    }
+}
+
+select,
+input,
+textarea,
+button {
+    width: 100%;
+    background-color: $white-color;
+    border: 1px solid $border-color;
+    outline: none;
+    @include border-radius(4px);
+}
+textarea {
+    height: 200px;
+    resize: none;
+    padding: 10px;
+}
+input,
+button,
+select {
+    height: 50px;
+    color: $body-color;
+}
+label,
+button,
+select {
+    cursor: pointer;
+}
+input {
+    background: #f4f4f4;
+    border: 1px solid transparent;
+    @include border-radius(5px);
+    padding-left: 10px;
+    &:focus {
+        border: 1px solid $theme-color;
+    }
+    &[type="submit"] {
+        cursor: pointer;
+        background-color: $primary-color;
+        color: $white-color;
+        font-weight: 700;
+        padding: 0;
+    }
+}
+
+.bg_img {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.bg_top_center {
+    background-position: top center;
+}
+.bg_bottom_center {
+    background-position: bottom center;
+}
+.bg_right_center {
+    background-position: right center;
+}
+.bg_left_center {
+    background-position: left center;
+}
+.bg_left_bottom {
+    background-position: left bottom;
+}
+.bg_left_top {
+    background-position: left center;
+}
+.bg_right_top {
+    background-position: right top;
+}
+.bg_right_bottom {
+    background-position: right bottom;
+}

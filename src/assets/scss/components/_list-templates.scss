@@ -1,0 +1,34 @@
+/* ------------------------------------------------------------ *\
+	List templates
+\* ------------------------------------------------------------ */
+
+.list-templates {
+	list-style-type: none;
+	border: 1px solid #2E3192;
+	border-radius: 4px;
+	padding: 12px 24px 0 21px;
+	font-size: 23px;
+	color: $c-black;
+	font-family: $ff-futura-pt;
+	font-weight: 500;
+	min-height: 187px;
+
+	@include breakpoint-down(tablet) {
+		padding: 10px 10px 15px;
+	}
+
+	li {
+		padding: 5px 14px 4px 14px;
+		padding-bottom: 4px;
+		border-bottom: 1px solid  #D1D3D4;
+
+		@include breakpoint-down(mobile) {
+			padding: 5px;
+		}
+	}
+
+	a {
+		text-decoration: none;
+		display: inline-block;
+	}
+}

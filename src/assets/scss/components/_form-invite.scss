@@ -1,0 +1,90 @@
+/* ------------------------------------------------------------ *\
+	Form invite
+\* ------------------------------------------------------------ */
+
+.form-invite {
+	max-width: 459px;
+	margin-left: -5px;
+
+	@include breakpoint-down(tablet) {
+		margin: 0;
+		max-width: none;
+	}
+
+	.form__inner {
+		margin-bottom: 70px;
+
+		@include breakpoint-down(tablet) {
+			margin-bottom: 50px;
+		}
+
+		@include breakpoint-down(mobile) {
+			margin-bottom: 25px;
+		}
+	}
+
+	.form__label {
+		font-size: 15px;
+		font-weight: 700;
+		font-style: italic;
+		display: inline-block;
+		padding-left: 13px;
+		margin-bottom: 13px;
+
+		@include breakpoint-down(mobile) {
+			margin-bottom: 5px;
+		}
+	}
+
+	.form__row {
+		margin-bottom: 12px;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	.form__actions {
+		padding-left: 40px;
+
+		@include breakpoint-down(mobile) {
+			display: flex;
+			flex-flow: column wrap;
+			align-items: flex-start;
+			padding: 0;
+		}
+	}
+
+	.form__btn {
+		border: 0;
+		outline: 0;
+		background: none;
+		color: $c-blue1;
+		font-size: 18px;
+		font-weight: 700;
+		font-style: italic;
+		display: inline-block;
+		vertical-align: middle;
+		margin-right: 46px;
+		transition: color $t-duration;
+
+		@include breakpoint-down(mobile) {
+			margin: 0 0 10px;
+		}
+
+		&:hover {
+			color: $c-orange;
+		}
+	}
+
+	.btn-red--alt {
+		font-size: 18px;
+		padding: 9px 5px;
+		border-radius: 19px;
+		min-width: 109px;
+	}
+
+	.checkboxes {
+		padding-top: 8px;
+	}
+}

@@ -1,0 +1,95 @@
+/* ------------------------------------------------------------ *\
+  Widgets steps
+\* ------------------------------------------------------------ */
+
+.widgets-steps {
+  padding-right: 36px;
+
+  @include breakpoint-down(tablet) {
+    padding: 0;
+  }
+
+  .widgets__actions {
+    margin-top: 20px;
+    padding-left: 14px;
+    color: $c-blue1;
+    font-size: 14px;
+
+    a {
+      text-decoration: none;
+      transition: color $t-duration;
+
+      &:hover {
+        color: $c-orange;
+      }
+    }
+  }
+
+  .widget {
+    position: relative;
+    color: $c-blue1;
+    text-align: center;
+    padding-bottom: 43px;
+    margin-bottom: 23px;
+
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 19px 16.5px 0 16.5px;
+      border-color: #2e3192 transparent transparent transparent;
+      margin-left: 6px;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+      padding: 0;
+
+      &:after {
+        display: none;
+      }
+    }
+
+    @include breakpoint-down(mobile) {
+      padding-bottom: 35px;
+      margin-bottom: 10px;
+    }
+
+    .widget__inner {
+      background: rgba(46,49,146,0.1);
+      border-radius: 13px;
+      padding: 16px 15px 23px;
+    }
+
+    .widget__head {
+      margin-bottom: 23px;
+    }
+
+    .widget__title {
+      font-size: 13px;
+    }
+
+    .widget__body {
+      margin-bottom: 19px;
+    }
+
+    .widget__foot {
+      font-size: 17px;
+
+      a {
+        text-decoration: none;
+        transition: color $t-duration;
+        display: inline-block;
+
+        &:hover {
+          color: $c-orange;
+        }
+      }
+    }
+  }
+}

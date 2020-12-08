@@ -1,0 +1,21 @@
+/* ------------------------------------------------------------ *\
+  Link help
+\* ------------------------------------------------------------ */
+
+.link-help {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 10px;
+  text-transform: uppercase;
+  max-width: 46px;
+  transition: opacity $t-duration;
+
+  &:hover {
+    opacity: .7;
+  }
+
+  span {
+    display: block;
+    margin-top: -2px;
+  }
+}

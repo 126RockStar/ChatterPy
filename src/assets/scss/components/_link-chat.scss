@@ -1,0 +1,9 @@
+.link-chat {
+	display: inline-block;
+	text-decoration: none;
+	transition: opacity $t-duration;
+
+	&:hover {
+		opacity: .7;
+	}
+}

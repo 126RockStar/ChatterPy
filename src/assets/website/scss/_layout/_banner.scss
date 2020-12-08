@@ -1,0 +1,296 @@
+/*banner-section-one starts here*/
+.banner-section {
+    background-color: #fafafa;
+    position: relative;
+    overflow: hidden;
+    padding: 100px 0;
+    .banner-content {
+        position: relative;
+        z-index: 1;
+        max-width: 680px;
+        span, .title, p , a {
+            position: relative;
+            z-index: 9;
+        }
+        .category {
+            display: block;
+            text-transform: uppercase;
+            color:$theme-color;
+            margin-top: -9px;
+            font-size: 16px;
+        }
+        .title {
+            text-transform: capitalize;
+            margin: 0;
+            @include breakpoint(md) {
+                font-size: 50px;
+                line-height: 60px;
+                margin-bottom: 30px;
+            }
+        }
+        .video-button-group {
+            margin: -5px;
+            margin-bottom: -15px;
+            >* {
+                margin: 5px;
+                margin-bottom: 15px;
+                text-transform: capitalize;
+            }
+            
+        }
+        @include breakpoint(max-md) {
+            .title {
+                font-size: 30px;
+                line-height: 1.4;
+                margin-bottom: 20px;
+            }
+        }
+        @include breakpoint(max-sm) {
+            text-align: center;
+            .title {
+                font-size: 26px;
+            }
+            .category {
+                font-size: 14px;
+                margin-top: -10px;
+            }
+        }
+        &::before, .round-shape::before, .round-shape::after {
+            position: absolute;
+            top: 50%;
+            left: 30%;
+            content: "";
+            @include border-radius(50%);
+            border: 2px dashed #d7e1f8;
+            @include transform(translate(-50% , -50%));
+        }
+        &::before {
+            width: 200px;
+            height: 200px;
+            animation: rotate 20s linear infinite;
+        }
+        .round-shape::before {
+            width: 400px;
+            height: 400px;
+            animation: rev-rotate 24s linear infinite;
+        }
+        .round-shape::after {
+            width: 600px;
+            height: 600px;
+            animation: rotate 30s linear infinite;
+        }
+    }
+    @include breakpoint(sm) {
+        padding: 140px 0;
+    }
+    @include breakpoint(xxl) {
+        padding: 160px 0;
+    }
+    @include breakpoint(lg) {
+        padding: 200px 0;
+    }
+    @include breakpoint(xxl) {
+        padding: 285px 0;
+    }
+}
+.shape-thumb {
+    &::before {
+        @extend %pa;
+        width: 450px;
+        height: 450px;
+        bottom: 0;
+        right: -20%;
+        background: #f5f7f9;
+        @include border-radius(50%);
+    }
+    position: absolute;
+    bottom: 0;
+    right: 20%;
+    @include transform(translateX(50%));
+    width: 300px;
+    @include breakpoint(max-lg) {
+        display: none;
+    }
+    img {
+        width: 100%;
+        position: relative;
+        z-index: 1;
+    }
+    @include breakpoint(xl) {
+        width: 400px;
+        &::before {
+            width: 500px;
+            height: 500px;
+            right: -7%;
+        }
+    }
+    @include breakpoint(xxl) {
+        width: 500px;
+        &::before {
+            width: 700px;
+            height: 700px;
+            right: -12%;
+        }
+    }
+    @media screen and (min-width: 1920px) {
+        right: 25%;
+        &::before {
+            width: 800px;
+            height: 800px;
+            right: -24%;
+        }
+    }
+}
+
+.maps-shape {
+    background-image: url(../../images/banner/banner-bg01.png);
+    background-size: contain;
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    right: 50px;
+    bottom: 50px;
+    @include breakpoint(xl) {
+        top: 10%;
+        left: 10%;
+        right: 20%;
+        bottom: 10%;
+    }
+    @include breakpoint(xxl) {
+        top: 10%;
+        left: 10%;
+        right: 40%;
+        bottom: 10%;
+    }
+    @include breakpoint(max-sm) {
+        display: none;
+    }
+}
+.v-button {
+    display: inline-flex;
+    align-items: center;
+    span {
+        color: $title-color;
+        text-transform: lowercase;
+        &:first-letter {
+            text-transform: lowercase;
+        }
+    }
+    .video-button {
+        position: relative;
+        @include transform(translate(0));
+        top: auto;
+        left: auto;
+        margin-left: 20px;
+        i {
+            margin: 0;
+            font-size: 24px;
+            margin-left: 5px;
+            margin-bottom: 7px;
+        }
+    }
+}
+/*banner-slider here*/
+.banner-slider {
+    position: relative;
+    overflow: hidden;
+    .banner-section {
+        position: relative;
+        .banner-content {
+            max-width: 750px;
+            margin: 0 auto;
+            &::before {
+                display: none;
+            }
+            * {
+                color: $white-color; 
+            }
+            p {
+                margin-bottom: 23px;
+                @include breakpoint(sm) {
+                    margin-bottom: 30px;
+                }
+            }
+            .custom-button {
+                color: $white-color;
+                &:hover {
+                    border-color: $white-color;
+                }
+            }
+            .category {
+                margin-bottom: 5px;
+                @include breakpoint(sm) {
+                    margin-bottom: 10px;
+                }
+            }
+        }
+        &::after {
+            @extend %pa;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba($color: #000000, $alpha: .75);
+        }
+        padding: 164px 0 100px;
+        @include breakpoint(sm) {
+            padding: 169px 0 100px;
+        }
+        @include breakpoint(md) {
+            padding: 270px 0 130px;
+        }
+        @include breakpoint(lg) {
+            padding: 327px 0 180px;
+        }
+    }
+}
+.bg-none {
+    background-color: transparent;
+}
+.banner-prev, .banner-next {
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
+    text-align: center;
+    background: $theme-color;
+    @include border-radius(50%);
+    font-size: 24px;
+    cursor: pointer;
+    outline: none;
+    position: absolute;
+    top: 50%;
+    margin-top: -35px;
+    z-index: 9;
+    i[class*="flaticon"] {
+        color: $white-color;
+    }
+    @include breakpoint(max-lg) {
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+        margin-top: -25px;
+        @include breakpoint(max-md) {
+            display: none;
+        }
+    }
+}
+.banner-prev {
+    left: 10px;
+}
+.banner-next {
+    right: 10px;
+}
+.banner-pagination {
+    position: absolute;
+    z-index: 9;
+    span {
+        background: $white-color;
+        opacity: 1;
+        &.swiper-pagination-bullet-active {
+            background: $theme-color;
+        }
+    }
+    @include breakpoint(md) {
+        display: none;
+    }
+}

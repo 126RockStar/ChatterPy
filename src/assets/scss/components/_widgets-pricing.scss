@@ -1,0 +1,237 @@
+/* ------------------------------------------------------------ *\
+  Widgets pricing
+\* ------------------------------------------------------------ */
+
+.widgets-pricing {
+  margin: -30px -20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  list-style-type: none;
+
+  @include breakpoint-down(tablet) {
+    margin: 0 -10px;
+  }
+
+  @include breakpoint-down(mobile) {
+    display: block;
+    margin: 0;
+  }
+
+  .widget {
+    max-width: 33.33%;
+    flex: 0 0 33.33%;
+    padding: 0 20px;
+
+    @include breakpoint-down(tablet) {
+      padding: 0 10px;
+    }
+
+    @include breakpoint-down(mobile) {
+      max-width: none;
+      margin-bottom: 70px;
+      padding: 0;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    .widget__inner {
+      position: relative;
+      background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(214,213,213,1) 100%);
+      border-radius: 20px;
+      box-shadow: 4px 4px 6px 0 rgba(0,0,0,0.3);
+      border: 1px solid  #9495c3;
+      padding: 19px 14px 16px;
+
+      @include breakpoint-down(small-desktop) {
+        padding: 30px 10px;
+      }
+    }
+
+    .widget__inner--offer {
+      border-radius: 0 0 20px 20px;
+    }
+
+    .widget__popular-offer {
+      position: absolute;
+      bottom: 100%;
+      left: -1px;
+      width: calc(100% + 2px);
+      background: $radial-gradient-blue;
+      border-radius: 20px 20px 0 0;
+      text-align: center;
+      color: $c-white;
+      font-weight: 300;
+      text-transform: uppercase;
+      font-size: 17px;
+      letter-spacing: 0.1em;
+      padding: 20px 50px 20px;
+      margin-bottom: -11px;
+
+      @include breakpoint-down(tablet) {
+        padding: 15px 30px;
+      }
+
+      p {
+        margin: 0;
+      }
+
+      img {
+        position: absolute;
+        top: -19px;
+        left: -17px;
+
+        @include breakpoint-down(tablet) {
+          max-width: 55px;
+        }
+      }
+    }
+
+    .widget__head {
+      text-align: center;
+      padding: 0 0 8px 8px;
+      color: #2f3395;
+      position: relative;
+      margin-bottom: 28px;
+
+      @include breakpoint-down(tablet) {
+        margin-bottom: 30px;
+      }
+
+      &:after {
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: #9c9eca;
+      }
+
+      h3 {
+        font-size: 30px;
+        font-weight: 500;
+        margin-bottom: 3px;
+
+        @include breakpoint-down(tablet) {
+          font-size: 28px;
+        }
+      }
+
+      p {
+        margin-bottom: 0;
+        font-size: 42px;
+        font-weight: 500;
+        color: #505ad6;
+
+        @include breakpoint-down(tablet) {
+          font-size: 40px;
+        }
+      }
+
+      span {
+        font-size: 15px;
+      }
+    }
+
+    .widget__body {
+      margin-bottom: 19px;
+
+      @include breakpoint-down(tablet) {
+        margin-bottom: 30px;
+      }
+    }
+
+    .widget__actions {
+      text-align: center;
+    }
+  }
+}
+
+.widgets-pricing--alt {
+  margin: 0;
+  padding-left: 5px;
+  align-items: stretch;
+
+  .widget {
+    padding: 0 23px;
+
+    @include breakpoint-down(small-desktop) {
+      padding: 0 12px;
+    }
+
+    @include breakpoint-down(tablet) {
+      padding: 0 7px;
+    }
+
+    .widget__inner {
+      padding: 29px 15px 42px;
+      height: 100%;
+      display: flex;
+      flex-flow: column wrap;
+
+      @include breakpoint-down(tablet) {
+        padding: 20px 10px 30px;
+      }
+    }
+
+    .widget__popular-offer {
+      font-size: 18px;
+      padding: 21px 50px 19px;
+      margin-bottom: -10px;
+      left: -1px;
+      width: calc(100% + 2px);
+
+      @include breakpoint-down(tablet) {
+        padding: 25px 10px 15px;
+      }
+    }
+
+    .widget__head {
+      padding: 0 0 10px 8px;
+      margin-bottom: 48px;
+
+      @include breakpoint-down(small-desktop) {
+        padding: 0 0 10px 0;
+        margin-bottom: 30px;
+      }
+    }
+
+    .widget__head h3 {
+      font-size: 32px;
+
+      @include breakpoint-down(tablet) {
+        font-size: 26px;
+      }
+    }
+
+    .widget__head p {
+      font-size: 42px;
+
+      @include breakpoint-down(tablet) {
+        font-size: 34px;
+      }
+    }
+
+    .widget__head span {
+      font-size: 16px;
+    }
+
+    .widget__body {
+      margin-bottom: 55px;
+      flex: auto;
+
+      @include breakpoint-down(tablet) {
+        margin-bottom: 30px;
+      }
+    }
+  }
+
+  .widget--offer {
+    .widget__inner {
+      border-radius: 0 0 20px 20px;
+    }
+  }
+}

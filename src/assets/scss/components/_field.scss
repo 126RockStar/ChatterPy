@@ -1,0 +1,150 @@
+/* ------------------------------------------------------------ *\
+	Fields
+\* ------------------------------------------------------------ */
+
+input::placeholder {
+	color: inherit;
+	opacity: 1;
+}
+
+textarea::placeholder {
+	color: inherit;
+	opacity: 1;
+}
+
+input:-webkit-autofill {
+	-webkit-text-fill-color: inherit;
+	-webkit-box-shadow: 0 0 0 1000px #fff inset;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.field {
+  width: 100%;
+  background: $c-white;
+  border-radius: 11px !important;
+  border: 1px solid  #cecece;
+  color: #939292;
+  font-weight: 400;
+  padding: 14px 12px 8px;
+  font-size: 15px;
+  line-height: 1;
+  transition: color $t-duration, border-color $t-duration;
+
+  &:focus {
+    border-color: $c-blue1;
+    color: $c-blue1;
+  }
+}
+
+.field--small {
+  border-radius: 9px !important;
+  padding: 9px 13px 9px;
+  letter-spacing: 0.025em;
+  font-size: 14px;
+}
+
+.field--smaller {
+  border-radius: 6px !important;
+  font-size: 15px;
+  padding: 9px 10px 4px 35px;
+  color: #7c7c7c;
+
+}
+
+.field--big {
+  color: #a3a3a3;
+  padding: 18px 12px 18px;
+  border-radius: 16px !important;
+
+  @include breakpoint-down(tablet) {
+    padding: 15px 16px;
+  }
+
+  @include breakpoint-down(mobile) {
+    padding: 10px 16px;
+  }
+}
+
+.field--template {
+  font-style: italic;
+  font-weight: 300;
+  color: $c-white;
+  padding: 3px 3px 9px 1px;
+  display: inline-block;
+  background: none;
+  width: 100%;
+  border: 0;
+  border-bottom: 2px solid  $c-white;
+
+  @include breakpoint-down(mobile) {
+    font-size: 18px;
+  }
+}
+
+.field--rounded {
+  border-radius: 16px !important;
+  padding: 11px 15px;
+}
+
+/*  Field textarea  */
+.field--textarea {
+  resize: none;
+  border-color: transparent;
+  min-height: 312px;
+  border-radius: 4px !important;
+  color: #afafaf;
+  font-weight: 300;
+  font-style: italic;
+  padding: 10px 5px;
+  font-size: 13px;
+  letter-spacing: 0.02em;
+
+  @include breakpoint-down(mobile) {
+    font-size: 14px;
+  }
+}
+
+.field--textarea-alt {
+  resize: none;
+  border-color: transparent;
+  min-height: 191px;
+  border-radius: 8px !important;
+  color: $c-blue1;
+  font-weight: 500;
+  padding: 10px 5px;
+  font-size: 12px;
+  font-style: normal;
+  border: 1px solid  #9697c8;
+  line-height: 1.2;
+}
+
+/* ------------------------------------------------------------ *\
+  Field alt
+\* ------------------------------------------------------------ */
+
+.field-alt {
+  width: 100%;
+  background: $c-white;
+  border-radius: 0 !important;
+  border: 2px solid  #D1D3D4;
+  color: #939292;
+  font-weight: 400;
+  padding: 14px 15px 11px;
+  font-size: 13px;
+  line-height: 1;
+  transition: color $t-duration, border-color $t-duration;
+
+  &:focus {
+    border-color: $c-blue1;
+    color: $c-blue1;
+  }
+}

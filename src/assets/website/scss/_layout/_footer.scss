@@ -1,0 +1,88 @@
+footer {
+    background: #161c2a;
+    .footer-top {
+        border-bottom: 1px solid #374957;
+        .footer-widget {
+            margin-bottom: 50px;
+            .title {
+                margin-bottom: 5px;
+                line-height: 30px;
+                font-size: 22px;
+                @include breakpoint(lg) {
+                    margin-bottom: 15px;
+                }
+            }
+            &.footer-link {
+                ul {
+                    margin-bottom: -14px;
+                    li {
+                        a {
+                            text-transform: capitalize;
+                            text-decoration: none;
+                            line-height: 30px;
+                            &:hover {
+                                padding-left: 5px;
+                            }
+                            &::before {
+                                content: "\f0da";
+                                font-family: "Font Awesome 5 Free";
+                                font-weight: 600;
+                                margin-right: 5px;
+                            }
+                        }
+                    }
+                }
+            }
+            &.footer-about {
+                p {
+                    padding-top: 5px;
+                    margin-top: 0;
+                    margin-bottom: 32px;
+                    line-height: 30px;
+                }
+            }
+        }
+    }
+
+    * {
+        color: $white-color !important;
+    }
+}
+.mb-50-none {
+    margin-bottom: -50px;
+}
+.footer-social {
+    @extend %flex;
+    margin : -5px;
+    li {
+        padding: 5px;
+        a {
+            width: 40px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            color: $white-color; 
+            border: 1px solid $white-color;
+            opacity: .6;
+            @include border-radius(50%);
+            &:hover {
+                opacity: 1;
+                border-color: $theme-color;
+                background: $theme-color;
+            }
+        }
+    }
+}
+
+.footer-bottom {
+  p {
+    line-height: 30px;
+  }
+
+  a {
+    text-decoration: none;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}

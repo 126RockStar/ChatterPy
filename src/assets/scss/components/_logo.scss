@@ -1,0 +1,21 @@
+/* ------------------------------------------------------------ *\
+	Logo
+\* ------------------------------------------------------------ */
+
+.logo {
+  display: inline-block;
+  max-width: 171px;
+  margin-right: 9px;
+
+  img {
+    width: 100%;
+  }
+
+  @include breakpoint-down(tablet) {
+    max-width: 145px;
+  }
+
+  @include breakpoint-down(mobile) {
+    max-width: 125px;
+  }
+}

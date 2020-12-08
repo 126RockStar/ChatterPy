@@ -1,0 +1,133 @@
+/* ------------------------------------------------------------ *\
+  Dropdown select
+\* ------------------------------------------------------------ */
+
+.dropdown-select {
+  position: relative;
+  transition: z-index $t-duration;
+
+  p {
+    margin-bottom: 4px;
+    font-size: 13px;
+    font-weight: 400;
+    text-align: center;
+  }
+
+  a {
+    display: inline-block;
+    text-decoration: none;
+  }
+
+  .dropdown__selected-element {
+    background: $c-white;
+    color: $c-blue1;
+    font-weight: 700;
+    font-style: italic;
+    text-transform: uppercase;
+    font-size: 11px;
+    min-width: 65px;
+    text-align: center;
+    position: relative;
+    padding: 5px 5px 5px 5px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    transition: min-width $t-duration;
+
+    &:after {
+      content: '';
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 6px 4px 0 4px;
+      border-color: #000000 transparent transparent transparent;
+      display: block;
+      margin-left: 6px;
+    }
+
+    @include breakpoint-down(tablet) {
+      font-size: 12px;
+    }
+  }
+
+  .dropdown__inner {
+    border: 1px solid  #7779b4;
+    background: $c-white;
+    font-style: italic;
+    font-weight: 400;
+    color: $c-black;
+    display: none;
+    width: 100%;
+    font-size: 15px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+
+    @include breakpoint-down(tablet) {
+      text-align: center;
+    }
+  }
+
+  .dropdown__menu {
+    list-style-type: none;
+    padding-top: 5px;
+    text-align: center;
+
+    li {
+      padding: 2px 6px;
+      margin-bottom: 2px;
+    }
+  }
+}
+
+.dropdown-select--alt {
+  .dropdown__selected-element {
+    min-width: 85px;
+  }
+
+  .dropdown__inner {
+    background: $c-blue1;
+    border-color: $c-blue1;
+    color: $c-white;
+    font-size: 14px;
+  }
+
+  .dropdown__menu {
+    li {
+      margin-bottom: 4px;
+    }
+  }
+}
+
+.dropdown-select.is-active {
+  z-index: 20;
+}
+
+.dropdown-select--size1 {
+  .dropdown__selected-element {
+    min-width: 111px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    text-transform: none;
+    padding: 6px 4px 4px 6px;
+
+    @include breakpoint-down(mobile) {
+      padding: 4px 4px 4px 6px;
+    }
+
+    &:after {
+      border-width: 7px 4px 0 4px;
+      margin-left: 8px;
+    }
+  }
+
+  .dropdown__menu {
+    li {
+      @include breakpoint-down(mobile) {
+        padding: 2px;
+      }
+    }
+  }
+}

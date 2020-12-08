@@ -1,0 +1,247 @@
+/* ------------------------------------------------------------ *\
+  Form contact
+\* ------------------------------------------------------------ */
+
+.form {
+  max-width: 704px;
+  margin: 0 auto;
+  border: 1px solid  #9495c3;
+  padding: 23px 35px 26px 51px;
+  background: linear-gradient(to bottom, rgba(35,31,32,0.2) 0%,rgba(255,255,255,1) 100%);
+  border-radius: 16px;
+  box-shadow: 2px 2px 6px 0 rgba(0,0,0,0.3);
+
+  @include breakpoint-down(tablet) {
+    padding: 30px;
+  }
+
+  @include breakpoint-down(mobile) {
+    padding: 20px 15px;
+  }
+
+  .form__head {
+    text-align: left;
+    position: relative;
+    margin-bottom: 39px;
+
+    @include breakpoint-down(tablet) {
+      margin-bottom: 30px;
+    }
+
+    @include breakpoint-down(mobile) {
+      margin-bottom: 20px;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: $c-blue1;
+    }
+
+    h3 {
+      font-size: 22px;
+      font-weight: 700;
+      font-style: italic;
+      color: $c-blue1;
+    }
+  }
+
+  .form__body {
+    margin-bottom: 36px;
+
+    @include breakpoint-down(tablet) {
+      margin-bottom: 30px;
+    }
+
+    @include breakpoint-down(mobile) {
+      margin-bottom: 20px;
+    }
+  }
+
+  .form__body-inner {
+    display: flex;
+    flex-wrap: wrap;
+
+    @include breakpoint-down(mobile) {
+      display: block;
+    }
+  }
+
+  .form__image {
+    max-width: 29%;
+    flex: 0 0 29%;
+    margin-right: 23px;
+    padding-top: 42px;
+
+    @include breakpoint-down(mobile) {
+      max-width: none;
+      padding: 0;
+      margin: 0 0 15px 0;
+    }
+
+    img {
+      margin-bottom: 2px;
+
+      @include breakpoint-down(mobile) {
+        max-width: 170px;
+      }
+    }
+  }
+
+  .form__image-actions {
+    a {
+      font-size: 13px;
+      color: $c-blue1;
+      text-decoration: none;
+      display: inline-block;
+      transition: color $t-duration;
+
+      &:hover {
+        color: $c-orange;
+      }
+    }
+  }
+
+  .form__group {
+    flex: 1;
+    padding-right: 5px;
+  }
+
+  .form__row {
+    margin-bottom: 18px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .form__actions {
+    text-align: right;
+    padding-right: 6px;
+
+    .form__btn {
+      min-width: 83px;
+    }
+  }
+}
+
+.form--template {
+  padding: 16px 34px 31px;
+  background: linear-gradient(to bottom, rgba(214,214,214,1) 0%,rgba(255,255,255,1) 100%);
+  border-radius: 20px;
+
+  @include breakpoint-down(tablet) {
+    padding: 20px;
+  }
+
+  @include breakpoint-down(mobile) {
+    padding: 20px 15px;
+  }
+
+  .form__head {
+    color: $c-blue1;
+    text-align: center;
+    margin-bottom: 23px;
+
+    @include breakpoint-down(mobile) {
+      margin-bottom: 15px;
+    }
+
+    &:after {
+      display: none;
+    }
+
+    h4 {
+      font-size: 19px;
+      font-weight: 500;
+    }
+  }
+
+  .form__body {
+    margin-bottom: 7px;
+  }
+
+  .form__footer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+
+    @include breakpoint-down(mobile) {
+      display: block;
+    }
+  }
+
+  .form__utilities {
+    padding-left: 25px;
+
+    @include breakpoint-down(mobile) {
+      padding: 0;
+      margin-bottom: 15px;
+    }
+
+    ul {
+      list-style-type: none;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+
+      @include breakpoint-down(mobile) {
+        justify-content: flex-end;
+      }
+    }
+
+    li {
+      margin-right: 17px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    a {
+      text-decoration: none;
+      display: inline-block;
+      transition: opacity $t-duration;
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+
+  .form__row {
+    margin-bottom: 4px;
+  }
+
+  .form__row--flex {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    .form__controls {
+      flex: 1;
+    }
+  }
+
+  .form__label--alt {
+    font-style: italic;
+    color: $c-blue1;
+    font-weight: 500;
+    font-size: 15px;
+    margin-right: 6px;
+    padding-left: 8px;
+
+    @include breakpoint-down(mobile) {
+      font-size: 16px;
+    }
+  }
+
+  .form__actions {
+    padding-right: 0;
+  }
+}

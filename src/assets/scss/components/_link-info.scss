@@ -1,0 +1,16 @@
+/* ------------------------------------------------------------ *\
+  Link info
+\* ------------------------------------------------------------ */
+
+.link-info {
+  display: inline-block;
+  margin-bottom: -9px;
+
+  @include breakpoint-down(tablet) {
+    margin: 0;
+  }
+
+  @include breakpoint-down(mobile) {
+    max-width: 30px;
+  }
+}

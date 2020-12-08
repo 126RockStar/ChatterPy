@@ -1,0 +1,88 @@
+/* ------------------------------------------------------------ *\
+  List features
+\* ------------------------------------------------------------ */
+
+.list-features {
+  list-style-type: none;
+  font-family: $ff-futura-condensed;
+  font-size: 19px;
+  padding-left: 36px;
+
+  @include breakpoint-down(small-desktop) {
+    padding-left: 10px;
+  }
+
+  @include breakpoint-down(tablet) {
+    font-size: 16px;
+  }
+
+  @include breakpoint-down(mobile) {
+    font-size: 19px;
+  }
+
+  li {
+    position: relative;
+    padding-left: 29px;
+    margin-bottom: 7px;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 2px;
+      left: 0;
+      background-image: url(../../images/temp/check.png);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      width: 21px;
+      height: 19px;
+      display: block;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include breakpoint-down(tablet) {
+      padding-left: 25px;
+
+      &:before {
+        width: 20px;
+        height: 19px;
+      }
+    }
+  }
+}
+
+/*  List features alt  */
+
+.list-features--alt {
+  font-size: 20px;
+  padding-left: 39px;
+
+  @include breakpoint-down(small-desktop) {
+    padding-left: 0;
+    font-size: 18px;
+  }
+
+  li {
+    padding-left: 30px;
+    margin-bottom: 6px;
+
+    @include breakpoint-down(tablet) {
+      margin-bottom: 10px;
+      padding-left: 25px;
+    }
+
+    &:before {
+      width: 22px;
+      height: 20px;
+
+      @include breakpoint-down(tablet) {
+        width: 18px;
+        height: 16px;
+        top: 4px;
+      }
+    }
+  }
+}

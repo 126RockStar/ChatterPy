@@ -1,0 +1,93 @@
+/* ------------------------------------------------------------ *\
+  Nav trigger
+\* ------------------------------------------------------------ */
+
+.nav-trigger {
+  position: relative;
+  display: none;
+  width: 25px;
+  height: 20px;
+
+  @include breakpoint-down(mobile) {
+    display: inline-block;
+  }
+
+  span {
+    position: absolute;
+    display: block;
+    height: 2px;
+    width: 100%;
+    border-radius: 4px;
+    background: $c-blue;
+    transition: top .2s .25s, opacity .2s .25s, transform .2s 0s;
+
+    &:nth-child(1) {
+      top: 0;
+    }
+
+    &:nth-child(2) {
+      top: 9px;
+    }
+
+    &:nth-child(3) {
+      top: 18px;
+    }
+  }
+}
+
+.nav-trigger.is-active {
+  span {
+    transition: background .2s, top .2s, opacity .2s, transform .2s .25s;
+
+    &:nth-child(3),
+    &:nth-child(1) {
+      top: 8px;
+    }
+
+    &:nth-child(2) {
+      opacity: 0;
+    }
+
+    &:nth-child(1) {
+      transform: rotate(45deg);
+    }
+
+    &:nth-child(3) {
+      transform: rotate(-45deg);
+    }
+  }
+}
+
+.nav-trigger--cog {
+  margin-bottom: 0;
+
+  svg {
+    fill: $c-blue;
+    transition: transform $t-duration;
+  }
+
+  &.is-active {
+    svg {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.nav-trigger--alt {
+  width: 23px;
+  height: 23px;
+
+  span {
+    &:nth-child(1) {
+      top: 0;
+    }
+
+    &:nth-child(2) {
+      top: 9px;
+    }
+
+    &:nth-child(3) {
+      top: 18px;
+    }
+  }
+}

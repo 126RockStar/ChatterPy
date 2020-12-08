@@ -1,0 +1,179 @@
+/* ------------------------------------------------------------ *\
+	Form billing
+\* ------------------------------------------------------------ */
+
+.form-billing {
+	padding-left: 7px;
+
+	@include breakpoint-down(tablet) {
+		padding: 0;
+	}
+
+	.form__inner {
+		margin-bottom: 51px;
+
+		@include breakpoint-down(tablet) {
+			margin-bottom: 30px;
+		}
+	}
+
+	.form__cols {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: flex-end;
+		margin: 0 -7px;
+
+		@include breakpoint-down(mobile) {
+			margin: 0;
+		}
+	}
+
+	.form__col {
+		flex: 1;
+		padding: 0 7px;
+
+		@include breakpoint-down(mobile) {
+			max-width: 100%;
+			flex: 0 0 100%;
+			padding: 0;
+			margin-bottom: 10px;
+		}
+
+		&:last-child {
+			@include breakpoint-down(mobile) {
+				margin: 0;
+			}
+		}
+	}
+
+	.form__col--1of2 {
+		max-width: 50%;
+		flex: 0 0 50%;
+
+		@include breakpoint-down(mobile) {
+			max-width: 100%;
+			flex: 0 0 100%;
+			padding: 0;
+		}
+	}
+
+	.form__col--size1 {
+		max-width: 44.35%;
+		flex: 0 0 44.35%;
+
+		@include breakpoint-down(mobile) {
+			max-width: 100%;
+			flex: 0 0 100%;
+			padding: 0;
+		}
+	}
+
+	.form__col--size2 {
+		max-width: 13.4%;
+		flex: 0 0 13.4%;
+
+		@include breakpoint-down(mobile) {
+			max-width: 100%;
+			flex: 0 0 100%;
+			padding: 0;
+		}
+	}
+
+	.form__col--size3 {
+		max-width: 52.5%;
+		flex: 0 0 52.5%;
+
+		@include breakpoint-down(mobile) {
+			max-width: 100%;
+			flex: 0 0 100%;
+			padding: 0;
+		}
+	}
+
+	.form__col--size4 {
+		max-width: 21%;
+		flex: 0 0 21%;
+
+		@include breakpoint-down(mobile) {
+			max-width: 100%;
+			flex: 0 0 100%;
+			padding: 0;
+		}
+	}
+
+	.form__label {
+		font-family: $ff-futura-pt;
+		font-weight: 700;
+		font-size: 17px;
+		display: inline-block;
+		margin-bottom: 6px;
+	}
+
+	.form__row {
+		margin-bottom: 9px;
+
+		@include breakpoint-down(mobile) {
+			margin-bottom: 10px;
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		p {
+			font-family: $ff-futura-pt;
+			text-align: center;
+			font-size: 17px;
+			margin: 1px 0 34px;
+			font-weight: 400;
+			padding-right: 36px;
+
+			@include breakpoint-down(mobile) {
+				max-width: none;
+				margin: 10px 0;
+				padding-right: 0;
+				font-size: 18px;
+				text-align: left;
+			}
+		}
+	}
+
+	.form__actions {
+		padding-left: 31px;
+
+		@include breakpoint-down(mobile) {
+			padding-left: 0;
+			display: flex;
+			flex-flow: column wrap;
+			align-items: flex-start;
+		}
+
+		.btn-red--alt {
+			font-size: 10px;
+			min-width: 110px;
+			padding: 11px 5px;
+		}
+	}
+
+	.form__btn {
+		border: 0;
+		outline: 0;
+		background: none;
+		color: $c-blue1;
+		font-size: 18px;
+		font-weight: 700;
+		font-style: italic;
+		display: inline-block;
+		vertical-align: middle;
+		margin-right: 54px;
+		transition: color $t-duration;
+
+		&:hover {
+			color: $c-orange;
+		}
+
+		@include breakpoint-down(mobile) {
+			margin: 0 0 10px;
+		}
+	}
+}
