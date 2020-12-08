@@ -35,6 +35,7 @@
     "react-dom": "^16.13.1",
     "react-flash-message": "^1.0.5",
     "react-history": "^0.18.2",
+    "react-infinite-scroll-component": "^5.1.0",
     "react-input-emoji": "^2.1.1",
     "react-moment": "^0.9.7",
     "react-phone-input-2": "^2.13.9",
