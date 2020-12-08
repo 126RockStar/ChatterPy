@@ -138,8 +138,10 @@
     flex: 0 0 36%;
     border-right: 2px solid  #e5e4e4;
     transition: margin $t-duration;
-    overflow-y: scroll;
-
+    // overflow-y: scroll;
+    .infinite-scroll-component__outerdiv {
+      width: 100%;
+    }
     @include breakpoint-down(tablet) {
       max-width: 33.33%;
       flex: 0 0 33.33%;

@@ -132,7 +132,7 @@ export default function ChatListSection({
         <div
           id="scrollableDiv"
           style={{
-            height: 500,
+            height: 480,
             overflowY: 'scroll',
             display: 'flex',
           }}
