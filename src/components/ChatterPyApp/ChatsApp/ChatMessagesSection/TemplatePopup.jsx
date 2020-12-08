@@ -11,7 +11,7 @@ import type { Template, TemplateId } from '../../types';
 export default function TemplatePopup(): React.Node {
   const { allTemplates } = React.useContext(ChatterPyContext);
   const [showTemplatePopup, setShowTemplatePopup] = React.useState(false);
-  const [searchText, setSearchText] = React.useState('');
+  const [templateText, setTemplateText] = React.useState('');
   const [
     selectedTemplateId,
     setSelectedTemplate,
@@ -32,6 +32,11 @@ export default function TemplatePopup(): React.Node {
     setSelectedTemplate(id);
   };
 
+  const handleTemplateTextChange = (e) => {
+    e.preventDefault();
+    setTemplateText(e.target.value);
+  }
+
   const onTemplateIconClick = e => {
     e.preventDefault();
     setShowTemplatePopup(prev => !prev);
@@ -41,42 +46,9 @@ export default function TemplatePopup(): React.Node {
     e.preventDefault();
     setShowTemplatePopup(false);
     setSelectedTemplate(undefined);
-    setSearchText('');
+    setTemplateText('');
   };
 
-  const onSearchChange = e => {
-    const txt = e.currentTarget.value;
-    setSearchText(txt);
-    setSelectedTemplate(undefined);
-  };
-
-  const renderTemplateList = () => {
-    const templates = searchObjects(searchText, allTemplates, ['name']);
-    const templateListItems = templates.map(template => (
-      <li key={template.id}>
-        <a href="/#" onClick={e => onTemplateSelect(e, template.id)}>
-          {template.name}
-        </a>
-      </li>
-    ));
-    return <ul className="list-templates">{templateListItems}</ul>;
-  };
-
-  const renderTemplateEditor = () => (
-    <>
-      <label htmlFor="text-template" className="popup__label hidden">
-        #1
-      </label>
-      <div className="popup__controls">
-        <textarea
-          className="field field--textarea field--textarea-alt"
-          name="text-template"
-          id="text-template"
-          value={selectedTemplate ? selectedTemplate.contents : ''}
-        />
-      </div>
-    </>
-  );
 
   const isActiveClass = showTemplatePopup ? 'is-active' : '';
   return (
@@ -102,36 +74,38 @@ export default function TemplatePopup(): React.Node {
           >
             X
           </a>
-          <label htmlFor="template-search" className="popup__label hidden">
-            Search Templates
-          </label>
-          <img
-            src={ChatterPyImages.Icons.search}
-            alt=""
-            width="18"
-            height="17"
-          />
           <div className="popup__controls">
-            <input
+            <div 
+              style={{
+                display:'flex', 
+                width:'100%', 
+                justifyContent:'center', 
+                marginBottom:'20px', 
+                color:'white', 
+                fontSize:'15px'
+              }}
+            >
+              <img
+                src={ChatterPyImages.Icons.arrow}
+                alt=""
+                width="15"
+                height="18"
+                style={{position:'absolute', top:'25px', left:'16px'}}
+              />
+              <span>Template's Name</span>
+            </div>            
+            <textarea
               type="text"
               className="field field--smaller"
-              name="template-search"
-              id="template-search"
-              value={searchText}
-              placeholder="Search Templates"
-              onChange={onSearchChange}
+              rows={10}
+              name="template-text"
+              id="template-text"
+              value={templateText}
+              placeholder="Hello there my friend"
+              onChange={handleTemplateTextChange}
             />
           </div>
-        </div>
-        <div className="popup__menu-body">
-          <div className="popup__content">
-            {selectedTemplate === undefined
-              ? renderTemplateList()
-              : renderTemplateEditor()}
-          </div>
-          <p>
-            <Link to="/app/template">Create a New Template.</Link>
-          </p>
+          <span style={{fontSize:'15px', color:'white'}}>Use Template</span>
         </div>
       </div>
     </div>

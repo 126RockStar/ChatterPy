@@ -115,12 +115,13 @@ export default function MessageComposer({
           />
 */}                  
                     {file && <ImageThumb image={file} onClick={deleteItem}/>}
-                    <input
+                    <textarea
                         type="text"
                         className="field field--big"
                         value={messageContents}
                         placeholder="Type message"
                         onChange={onMessageChange}
+                        rows={5}
                     />
                     <p className="hidden visible-xs-block">
                         {messageContents.length}<span>{Math.ceil(messageContents.length / 160)}/8</span>

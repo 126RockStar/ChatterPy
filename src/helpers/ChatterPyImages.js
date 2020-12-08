@@ -20,6 +20,7 @@ import icoTemplateLetter from '../assets/images/temp/ico-template-letter.png';
 import icoAtSign from '../assets/images/temp/at-sign.png';
 import icoLater from '../assets/images/temp/ico-later.png';
 import icoNewChat from '../assets/images/temp/ico-new-chat.png';
+import icoArrow from '../assets/images/temp/ico-arrow.png';
 
 const ChatterPyImages = {
   logo,
@@ -46,6 +47,7 @@ const ChatterPyImages = {
     atSign: icoAtSign,
     later: icoLater,
     newChat: icoNewChat,
+    arrow: icoArrow
   },
 };
 
