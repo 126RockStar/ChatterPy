@@ -94,19 +94,24 @@ export default function TemplatePopup(): React.Node {
               />
               <span>Template's Name</span>
             </div>            
-            <textarea
-              type="text"
-              className="field field--smaller"
-              rows={10}
-              name="template-text"
-              id="template-text"
-              value={templateText}
-              placeholder="Hello there my friend"
-              onChange={handleTemplateTextChange}
-            />
-          </div>
-          <span style={{fontSize:'15px', color:'white'}}>Use Template</span>
+            
+          </div>          
         </div>
+        <div style={{padding:'5px'}}>
+          <textarea
+            type="text"
+            style={{width:'100%', padding:'5px', borderRadius:'5px'}}
+            rows={10}
+            name="template-text"
+            id="template-text"
+            value={templateText}
+            placeholder="Hello there my friend"
+            onChange={handleTemplateTextChange}
+          />
+        </div>
+        <div style={{marginLeft:'10px', marginBottom:'10px'}}>
+          <span style={{fontSize:'17px', color:'#595BA8', fontFamily:'bold'}}>Use Template</span>
+        </div>        
       </div>
     </div>
   );

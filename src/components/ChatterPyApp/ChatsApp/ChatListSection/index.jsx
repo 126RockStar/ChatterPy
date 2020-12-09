@@ -141,6 +141,7 @@ export default function ChatListSection({
               dataLength={infiniteScrollUsers.length}
               next={fetchMoreData}
               hasMore={hasMore}
+              loader={<h4 style={{textAlign:'center'}}>Loading...</h4>}
               scrollableTarget="scrollableDiv"
             >
               {
@@ -163,9 +164,6 @@ export default function ChatListSection({
               } 
             </InfiniteScroll>            
             </div>
-            {
-              hasMore?<h4 style={{textAlign:'center'}}>Loading...</h4>:null
-            }
         </div>
       {mobileView}
     </>
