@@ -26,7 +26,7 @@ export default function ChatMessageBubble({
         <div className="chats__row">
           <div className="chats__row-inner">
             <em>{user ? user.fullDisplayName : sender}</em>
-            <p>{contents}</p>
+            <p style={{whiteSpace:'pre-wrap', textAlign:'left'}}>{contents}</p>
             <span>{timestampStr}</span>
           </div>
         </div>
@@ -36,7 +36,7 @@ export default function ChatMessageBubble({
         <div className="chats__row chats__row--person">
           <div className="chats__row-inner">
             <em>{sender}</em>
-            <p>{contents}</p>
+            <p p style={{whiteSpace:'pre-wrap', textAlign:'left'}}>{contents}</p>
             <span>{timestampStr}</span>
           </div>
         </div>
@@ -45,7 +45,7 @@ export default function ChatMessageBubble({
       return (
         <div className="chats__private-message">
           <em>{sender}</em>
-          <p>{contents}</p>
+          <p p style={{whiteSpace:'pre-wrap', textAlign:'left'}}>{contents}</p>
           <span>{timestampStr}</span>
         </div>
       );
