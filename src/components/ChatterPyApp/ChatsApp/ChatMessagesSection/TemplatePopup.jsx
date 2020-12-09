@@ -111,7 +111,29 @@ export default function TemplatePopup(): React.Node {
         </div>
         <div style={{marginLeft:'10px', marginBottom:'10px'}}>
           <span style={{fontSize:'17px', color:'#595BA8', fontFamily:'bold'}}>Use Template</span>
-        </div>        
+        </div>      
+        <div 
+          style={{
+            width:'0px', 
+            height:'0px', 
+            position:'absolute',
+            right:'53px',
+            borderLeft:'25px solid transparent', 
+            borderRight:'21px solid transparent', 
+            borderTop:'23px solid #2E3192'
+          }}
+        />  
+        <div 
+          style={{
+            width:'0px', 
+            height:'0px', 
+            position:'absolute',
+            right:'55px',
+            borderLeft:'20px solid transparent', 
+            borderRight:'20px solid transparent', 
+            borderTop:'20px solid #FFFFFF'
+          }}
+        />  
       </div>
     </div>
   );
