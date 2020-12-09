@@ -1,6 +1,6 @@
 // @flow
 import * as React from 'react';
-import {useState} from 'react';
+import {useState, useRef} from 'react';
 import $ from 'jquery';
 
 import ChatterPyContext from '../../ChatterPyContext';
@@ -39,13 +39,15 @@ export default function MessageComposer({
     const [minute, setMinute] = useState(0)
     const [hour, setHour] = useState(8)
     const [meridian, setMeridian] = useState("AM")
-    const [flag, setFlag] = useState(false)
+    const [flag, setFlag] = useState(false);
+    const messageEl = useRef(null);
     useMessageComposer();
 
     const onMessageSubmit = () => {
 
         const {selectedPhoneNumber} = globalState;
         if (messageContents !== '' && selectedPhoneNumber) {
+            
             ChatService.sendMessage(
                 conversationId,
                 selectedPhoneNumber.phoneNumber,
@@ -58,6 +60,7 @@ export default function MessageComposer({
                     recipientContactId: recipient.id,
                 });
                 setMessageContents('');
+                messageEl.current.style.height = "auto";
             });
         }
     };
@@ -81,7 +84,9 @@ export default function MessageComposer({
         setMessageContents(messageContents + emojiObject.emoji);
     };
     const onMessageChange = e => {
-        setMessageContents(e.target.value)
+        setMessageContents(e.target.value);
+        messageEl.current.style.height = "auto";
+        messageEl.current.style.height = `${messageEl.current.scrollHeight}px`;
     }
     const [file, setFile] = React.useState("");
 
@@ -99,7 +104,7 @@ export default function MessageComposer({
       inputEl.current.click();
     }
     return (
-        <div className="chats__chat-utilities" ref={nodeRef}>
+        <div className="chats__chat-utilities" ref={nodeRef} style={{position:'absolute', width:'100%', bottom:'50px'}}>
             <div className="chats__input-controls">
                 <label htmlFor="field-message" className="hidden">
                     Type Message
@@ -117,11 +122,13 @@ export default function MessageComposer({
                     {file && <ImageThumb image={file} onClick={deleteItem}/>}
                     <textarea
                         type="text"
+                        ref={messageEl}
                         className="field field--big"
+                        style={{maxHeight:'100px'}}
                         value={messageContents}
                         placeholder="Type message"
                         onChange={onMessageChange}
-                        rows={5}
+                        rows={1}
                     />
                     <p className="hidden visible-xs-block">
                         {messageContents.length}<span>{Math.ceil(messageContents.length / 160)}/8</span>
