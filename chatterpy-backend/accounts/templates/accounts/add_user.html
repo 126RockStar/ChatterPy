@@ -1,0 +1,21 @@
+{% extends 'account_base.html' %}
+
+{% load bootstrap4 %}
+{% load i18n %}
+
+{% block title %}Add User{% endblock %}
+
+{% block content %}
+
+    <h4>{% trans 'Add User' %}</h4>
+
+    <form method="post">
+
+        {% csrf_token %}
+        {% bootstrap_form form %}
+
+        <button class="btn btn-success">{% trans 'Add' %}</button>
+
+    </form>
+
+{% endblock %}

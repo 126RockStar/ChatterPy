@@ -1,0 +1,21 @@
+{% extends 'account_base.html' %}
+
+{% load bootstrap4 %}
+{% load i18n %}
+
+{% block title %}Invite user{% endblock %}
+
+{% block content %}
+
+    <h4>{% trans 'Invite user' %}</h4>
+
+    <form method="post">
+
+        {% csrf_token %}
+        {% bootstrap_form form %}
+
+        <button class="btn btn-primary">{% trans 'Next' %}</button>
+
+    </form>
+
+{% endblock %}

@@ -1,0 +1,46 @@
+# Django Deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: chatterpy-django
+  labels:
+    app: chatterpy-django
+    type: web
+spec:
+  replicas: 1
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+  selector:
+    matchLabels:
+      app: chatterpy-django
+  template:
+    metadata:
+      name: chatterpy-django
+      labels:
+        app: chatterpy-django
+        type: web
+    spec:
+      containers:
+        - name: chatterpy-web
+          image: registry.digitalocean.com/chatterpy-container-registry/chatterpy_web:latest # Registry Stores Image Name (Web for Django)
+          imagePullPolicy: Always # Always = Development || IfNotPresent = Production
+          command: ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+          envFrom: # Refer back to the ConfigMap.yaml
+            - configMapRef:
+                name: chatterpy-django-config
+            - secretRef:
+                name: msgbird-api-token
+          ports:
+            - containerPort: 8000
+          resources:
+            requests:
+              memory: "500Mi"
+              cpu: "250m"
+            limits:
+              memory: "1000Mi"
+              cpu: "2000m"
+      imagePullSecrets:
+        - name: registry-chatterpy-container-registry

@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: chatterpy-django-svc
+  labels:
+    app: chatterpy-django
+spec:
+  type: ClusterIP
+  selector:
+    app: chatterpy-django
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8000

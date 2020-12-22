@@ -1,0 +1,21 @@
+# Django Migration Job
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: chatterpy-django-migrations
+spec:
+  template:
+    spec:
+      containers:
+        - name: chatterpy-django-migrate
+          image: registry.digitalocean.com/chatterpy-container-registry/chatterpy_web:latest
+          command: ["python", "manage.py", "migrate"]
+          envFrom:
+            - configMapRef:
+                name: chatterpy-django-config
+            - secretRef:
+                name: msgbird-api-token
+      imagePullSecrets:
+        - name: registry-chatterpy-container-registry
+      restartPolicy: Never
+  backoffLimit: 5

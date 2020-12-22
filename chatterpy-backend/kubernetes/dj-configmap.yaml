@@ -1,0 +1,21 @@
+# Config Map for Django .env file
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: chatterpy-django-config
+  labels:
+    app: chatterpy
+data: # This is essentially the '.env' file
+  SECRET_KEY: "REPLACE WITH SECRET_KEY"
+  DEVELOPMENT: "True"
+  REMOTE_MEDIA_SERVER: "True"
+  DO_STORAGE_REGION: ""
+  DO_STORAGE_BUCKET_NAME: ""
+  DO_STORAGE_KEY: ""
+  DO_STORAGE_SECRET: ""
+  SQLITE: "False"
+  DEV_DB_NAME: "defaultdb"
+  DEV_DB_USER: "doadmin"
+  DEV_DB_PASSWORD: "password"
+  DEV_DB_HOST: "host"
+  DEV_DB_PORT: "25060"

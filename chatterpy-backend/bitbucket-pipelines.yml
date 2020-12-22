@@ -1,0 +1,27 @@
+image: atlassian/default-image:2
+pipelines:
+  default:
+    - step:
+        name: Docker build
+        services:
+          - docker
+        caches:
+          - docker
+        script:
+          - docker build --memory=3072M -t $DO_REG/$REPO_NAME:$BITBUCKET_COMMIT -t $DO_REG/$REPO_NAME:latest .
+          # authenticate with the Docker Hub registry
+          - docker login -u $DOCTL_TOKEN -p $DOCTL_TOKEN registry.digitalocean.com
+          # push the new Docker image to the Docker registry
+          - docker push $DO_REG/$REPO_NAME:latest
+    - step:
+        name: Deploy to Kubernetes
+        image: atlassian/pipelines-kubectl
+        script:
+          # Download and install `doctl` so that we can refresh configs for k8s
+          - apk --no-cache add curl
+          - curl -sL https://github.com/digitalocean/doctl/releases/download/v1.27.0/doctl-1.27.0-linux-amd64.tar.gz | tar -xzv
+          - mv ./doctl /usr/local/bin
+          # Get the config file
+          - doctl -t $DOCTL_TOKEN k8s cluster kubeconfig show chatterpy-sfo2-cluster > kubeconfig.yml
+          # Set of actions to be executed to Kubernetes cluster
+          - kubectl --kubeconfig=kubeconfig.yml set image deployment/${DEPLOYMENT_NAME} ${CONTAINER_NAME}=$DO_REG/$REPO_NAME:latest

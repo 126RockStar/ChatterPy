@@ -1,0 +1,6 @@
+{% load i18n %}
+
+{% trans 'You received the invitation to sign up' %}
+{% trans 'To sign up according to the invitation, please follow this link:' %}
+
+{{ uri }}

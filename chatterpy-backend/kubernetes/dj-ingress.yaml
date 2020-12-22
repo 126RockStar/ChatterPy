@@ -1,0 +1,18 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: echo-ingress
+  annotations:
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+spec:
+  tls:
+    - hosts:
+        - test.chatterpy.com
+      secretName: chatterpy-tls
+  rules:
+    - host: test.chatterpy.com
+      http:
+        paths:
+          - backend:
+              serviceName: chatterpy-django-svc
+              servicePort: 80
